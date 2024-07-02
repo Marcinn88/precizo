@@ -1,7 +1,10 @@
+import styles from "./Nav.module.css";
 export const Nav = ({ selected, token }) => {
   return (
     <>
-      <h2>nawigacja</h2>
+      <div className={styles.mainNav}>
+        <h2 className={styles.mainNavHeader}>nawigacja</h2>
+      </div>
     </>
   );
 };
