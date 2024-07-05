@@ -22,6 +22,11 @@
 
 .mainNav_menuIco{
     width: 40px;
+    transition: scale 0.5s ease-in-out;
+}
+.mainNav_menuIco:hover{
+    scale: 1.15;
+    cursor: pointer;
 }
 
 .mainNav_logoImg{

@@ -18,6 +18,12 @@
     font-weight: 400;
     font-style: normal;
     margin: 30px auto;
+    max-width: 800px;
+}
+.OrderWrapper:hover{
+    background-color: #141414;
+    cursor: pointer;
+    box-shadow: 8px 8px 24px -16px rgba(66, 68, 90, 1);
 }
 
 .OrderParameters{
