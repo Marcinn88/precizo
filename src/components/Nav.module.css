@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    min-width: 250px;
+    min-width: 210px;
 }
 .mainNavHeader{
     color: rgb(206, 0, 0);
@@ -36,16 +36,19 @@
 
 .mainNav_list{
     list-style: none;
-    font-family: "Oswald", sans-serif;
+    font-family: "Kufam", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
 
 .mainNav_el_title{
-    color: rgb(170, 170, 170);
+    font-size: 12px;
+    color: #ffffff80;
 }
 
 .mainNav_el{
-    color: rgb(255, 86, 86);
+    font-weight: 800;
+    font-size: 16px;
+    color: fff;
 }

@@ -1,0 +1,54 @@
+.Card{
+    width: 225px;
+    min-height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardCode{
+    position: absolute;
+    top:-15px;
+    left:75px;
+    width: 75px;
+    height: auto;
+    background-color: red;
+    text-align: center;
+    padding: 4px 0px 2px 0px;
+    margin: 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    list-style: none;
+    line-height: 1.4;
+    font-family: "Kufam", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.cardHeader{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: black;
+    color:white;
+    line-height: 1.4;
+    font-family: "Kufam", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+    max-height: 50px;
+}
+.cardHeaderNumber{
+color:red;
+padding: 0;
+}
+.cardHeaderTitle{
+padding: 0;
+}

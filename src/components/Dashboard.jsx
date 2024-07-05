@@ -1,9 +1,11 @@
 import styles from "./Dashboard.module.css";
-
+import { Card } from "./Card";
 export const Dashboard = ({ token }) => {
   return (
     <>
-      <h1 className={styles.Dashboard}>Dashboard</h1>
+      <div className={styles.Dashboard}>
+        <Card />
+      </div>
     </>
   );
 };

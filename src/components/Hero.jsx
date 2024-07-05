@@ -5,8 +5,8 @@ import { OrderList } from "./OrderList";
 export const Hero = ({ token }) => {
   return (
     <>
-      {/* <Dashboard /> */}
       <OrderList />
+      <Dashboard />
     </>
   );
 };
