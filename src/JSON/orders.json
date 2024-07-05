@@ -1,0 +1,74 @@
+{
+    "orders":[
+        {
+            "numer":"ZP01234/2024",
+            "nazwa":"Wał 123456789",
+            "indeks":"W01234",
+            "wariant":"1",
+            "podwersja":"Podstawowa [5]",
+            "status":"2-Rozpoczęty",
+            "obrabiarka":"PUMA TT2500",
+            "nazwa_op":"Toczenie",
+            "numer_op":"30",
+            "ilosc":"150",
+            "bufor":"715",
+            "zgl_do_zdps": false
+        },
+        {
+            "numer":"ZP01344/2024",
+            "nazwa":"Wał 0045214",
+            "indeks":"W01223",
+            "wariant":"2",
+            "podwersja":"Podstawowa [1]",
+            "status":"3-Kolejka",
+            "obrabiarka":"PUMA TT2500",
+            "nazwa_op":"Toczenie",
+            "numer_op":"20",
+            "ilosc":"10",
+            "bufor":"500",
+            "zgl_do_zdps": false
+        },
+        {
+            "numer":"ZP00994/2024",
+            "nazwa":"Półoś HXE55342",
+            "indeks":"W06323",
+            "wariant":"1",
+            "podwersja":"Podstawowa [10]",
+            "status":"3-Kolejka",
+            "obrabiarka":"PUMA TT2500",
+            "nazwa_op":"Toczenie",
+            "numer_op":"10",
+            "ilosc":"220",
+            "bufor":"-1",
+            "zgl_do_zdps": false
+        },
+        {
+            "numer":"ZP02313/2024",
+            "nazwa":"Półoś CC112233",
+            "indeks":"W03333",
+            "wariant":"3",
+            "podwersja":"Alternatywna [1]",
+            "status":"3-Kolejka",
+            "obrabiarka":"PUMA TT2500",
+            "nazwa_op":"Toczenie",
+            "numer_op":"60",
+            "ilosc":"104",
+            "bufor":"-2",
+            "zgl_do_zdps": false
+        },
+        {
+            "numer":"ZP08324/2024",
+            "nazwa":"Wał AXA123123",
+            "indeks":"W06666",
+            "wariant":"1",
+            "podwersja":"Podstawowa [8]",
+            "status":"3-Kolejka",
+            "obrabiarka":"PUMA TT2500",
+            "nazwa_op":"Toczenie",
+            "numer_op":"60",
+            "ilosc":"55",
+            "bufor":"-10",
+            "zgl_do_zdps": false
+        }
+    ]
+    }

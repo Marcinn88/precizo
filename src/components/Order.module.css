@@ -1,0 +1,69 @@
+.Order{
+    color:yellow;
+    
+}
+
+.OrderWrapper{
+    max-width: 90vw;
+    background-color: #1c1c1a;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 30px auto;
+}
+
+.OrderParameters{
+    display: flex;
+    gap:5px;
+    flex-wrap: wrap;
+    /* background-color: rgb(90, 0, 0); */
+    justify-content: center;
+    
+}
+.OrderParameter{
+    /* background-color: rgb(0, 70, 70); */
+    min-width: 150px;
+    padding: 0;
+}
+.OrderHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.OrderTitle{
+margin: 0;
+line-height: 0.8;
+font-size: 14px;
+font-family: Kufam;
+color: #ed1c24;
+}
+.OrderNumber{
+margin: 0 0 10px 0;
+font-family: kufam;
+font-size: 25px;
+font-weight: 800;
+
+}
+.OrderParTitle{
+    margin: 0;
+    line-height: 0.8;
+    font-size: 14px;
+    font-family: Kufam;
+    font-weight: 600;
+    color: #ffffff80;
+}
+.OrderParValue{
+    margin: 0;
+    font-size: 20px;
+    color: white;
+    margin: 0 0 10px 0;
+}

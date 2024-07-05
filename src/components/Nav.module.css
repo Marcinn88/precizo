@@ -1,3 +1,46 @@
+.mainNav{
+    background-color: #1c1c1a;
+    /* max-width: 100%; */
+    min-height: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+.mainNav_rightSide{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 250px;
+}
 .mainNavHeader{
     color: rgb(206, 0, 0);
+}
+
+.mainNav_menuIco{
+    width: 40px;
+}
+
+.mainNav_logoImg{
+    width: 211px;
+    height: 24px;
+}
+
+.mainNav_list{
+    list-style: none;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.mainNav_el_title{
+    color: rgb(170, 170, 170);
+}
+
+.mainNav_el{
+    color: rgb(255, 86, 86);
 }
