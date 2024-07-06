@@ -1,0 +1,14 @@
+{
+    "menu":[
+        {
+            "obraz":"list",
+            "nazwa":"Zlecenia",
+            "link":"/precizo/orders/"
+        },
+        {
+            "obraz":"waste",
+            "nazwa":"Straty godzinowe",
+            "link":"/precizo/orders/"
+        }
+    ]
+    }

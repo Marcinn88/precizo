@@ -5,5 +5,5 @@ width: 100%;
 padding: 40px;
 display: flex;
 justify-content: left;
-
+flex-wrap: wrap;
 }

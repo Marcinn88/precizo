@@ -10,4 +10,15 @@
     align-items: center;
     font-family: Oswald;
     font-size: 25px;
+    flex-direction: column;
+}
+
+.MenuEl_img{
+    width: 100px;
+    height: 100px;
+    margin: 0;
+}
+
+.MenuEl_title{
+    margin: 0;
 }
