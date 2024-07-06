@@ -1,6 +1,5 @@
 .mainNav{
     background-color: #1c1c1a;
-    /* max-width: 100%; */
     min-height: 75px;
     margin-left: auto;
     margin-right: auto;
@@ -9,6 +8,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
+    position: relative;
 }
 .mainNav_rightSide{
     display: flex;
@@ -51,4 +51,56 @@
     font-weight: 800;
     font-size: 16px;
     color: fff;
+}
+
+.mainNav_menu{
+    box-sizing: content-box;
+    position: absolute;
+    top:75px;
+    right:0;
+    background-color: #1c1c1a;
+    list-style: none;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.mainNav_menuEl{
+    width: 200px;
+    height: 50px;
+    padding: 0;
+    margin:0;
+    border-bottom: #252525 solid 1px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.mainNav_menuEl:last-child{
+border-radius: 0 0 0 10px;
+}
+
+.mainNav_menuEl:hover{
+background-color: #333333;
+cursor: pointer;
+}
+.mainNav_Shadowbox{
+    position: fixed;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
