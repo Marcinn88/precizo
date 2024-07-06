@@ -25,13 +25,15 @@ export const Nav = ({ selected, token }) => {
         )}
         {navMenu && (
           <ul className={styles.mainNav_menu}>
-            <li className={styles.mainNav_menuEl}>MENU</li>
-            <li className={styles.mainNav_menuEl}>
-              <Link to="/orders/">ZLECENIA</Link>
-            </li>
+            <Link to="/precizo/">
+              <li className={styles.mainNav_menuEl}>MENU</li>
+            </Link>
+            <Link to="/precizo/orders/">
+              <li className={styles.mainNav_menuEl}>ZLECENIA</li>
+            </Link>
             <li className={styles.mainNav_menuEl}>INFORMACJE</li>
             <li className={styles.mainNav_menuEl}>POMOC</li>
-            <li className={styles.mainNav_menuEl}>WYLOGUJ</li>
+            <li className={styles.mainNav_menuEl_last}>WYLOGUJ</li>
           </ul>
         )}
         <img className={styles.mainNav_logoImg} src={logoImg} alt="logo" />

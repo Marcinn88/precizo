@@ -76,7 +76,8 @@
     z-index: 2;
 }
 
-.mainNav_menuEl{
+.mainNav_menuEl,
+.mainNav_menuEl_last{
     width: 200px;
     height: 50px;
     padding: 0;
@@ -88,16 +89,21 @@
     justify-content: center;
     align-items: center;
 }
-.mainNav_menuEl:last-child{
+.mainNav_menuEl link{
+    color:white;
+}
+.mainNav_menuEl_last{
 border-radius: 0 0 0 10px;
 }
 
-.mainNav_menuEl:hover{
+.mainNav_menuEl:hover,
+.mainNav_menuEl_last:hover{
 background-color: #333333;
 cursor: pointer;
 }
 .mainNav_Shadowbox{
     position: fixed;
+    left:0;
     top:0;
     background-color: rgba(0, 0, 0, 0.4);
     width: 100%;

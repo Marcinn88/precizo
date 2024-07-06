@@ -1,0 +1,13 @@
+.MenuEl_wrapper{
+    width: 180px;
+    height: 180px;
+    background-color: #1c1c1a;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Oswald;
+    font-size: 25px;
+}

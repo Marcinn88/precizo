@@ -1,10 +1,13 @@
 import { Order } from "./Order";
 import styles from "./OrderList.module.css";
 import data from "../JSON/orders.json";
+import { Nav } from "./Nav";
+import { nanoid } from "nanoid";
 console.log(data.orders);
 export const OrderList = ({ token }) => {
   return (
     <>
+      <Nav />
       <div className={styles.OrderList}>
         {data.orders
           // .toReversed()
@@ -25,6 +28,7 @@ export const OrderList = ({ token }) => {
             }) => {
               return (
                 <Order
+                  key={nanoid()}
                   numer={numer}
                   nazwa={nazwa}
                   indeks={indeks}
