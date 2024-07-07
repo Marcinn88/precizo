@@ -46,3 +46,14 @@ width: 700px;
 .FormBtn:hover{
     border: 1px solid red;
 }
+@media screen and (max-width: 800px) {
+    .loginPage_logoImg{
+        width: 500px;
+        }
+  }
+
+  @media screen and (max-width: 550px) {
+    .loginPage_logoImg{
+        width: 250px;
+        }
+  }
