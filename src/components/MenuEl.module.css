@@ -28,19 +28,10 @@ border: 1px solid red;
 
 @media screen and (max-width: 500px) {
     .MenuEl_wrapper{
-        width: 110px;
-        height: 110px;
-        background-color: #1c1c1a;
-        border-radius: 10px;
-        border: 1px solid black;
+        width: 130px;
+        height: 130px;
         margin: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Oswald;
         font-size: 15px;
-        flex-direction: column;
-        transition: all 0.3s ease-in-out;
     }
     .MenuEl_img{
         width: 70px;
@@ -48,25 +39,23 @@ border: 1px solid red;
         margin: 0;
     }
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 410px) {
     .MenuEl_wrapper{
-        width: 110px;
-        height: 110px;
-        background-color: #1c1c1a;
-        border-radius: 10px;
-        border: 1px solid black;
+        width: 120px;
+        height: 120px;
         margin: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Oswald;
-        font-size: 15px;
-        flex-direction: column;
-        transition: all 0.3s ease-in-out;
+    }
+  }  
+  @media screen and (max-width: 350px) {
+    .MenuEl_wrapper{
+        width: 90px;
+        height: 90px;
+        margin: 5px;
+        font-size: 12px;
     }
     .MenuEl_img{
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
         margin: 0;
     }
   }

@@ -46,12 +46,12 @@
     margin: 20px 0 5px 0;
 }
 .cardHeaderNumber{
-color:red;
-padding: 0;
+    color:red;
+    padding: 0;
 }
 .cardHeaderTitle{
-padding: 0;
-font-size: 18px;
+    padding: 0;
+    font-size: 18px;
 }
 .cardToolName{
     font-family: Oswald;
@@ -162,3 +162,130 @@ transition: scale 0.3s ease-in-out;
 .cardIco{
     width: 25px;
 }
+
+@media screen and (max-width: 800px) {
+    .Card{
+        width: 205px;
+        min-height: 250px;
+    }
+    .cardHeader{
+        padding: 0 10px;
+        font-size: 18px;
+    }
+    .cardHeaderTitle{
+    padding: 0;
+    font-size: 17px;
+    }
+    .cardButtonList{
+        gap: 10px;
+    }
+    .cardButton{
+        width: 75px;
+        height: 35px;
+        font-size: 12px;
+    }
+    .cardToolName{
+        font-family: Oswald;
+        height: 35px;
+        font-weight: 600;
+        font-size: 12px;
+        text-align: center;
+        margin: 0;
+    }
+    .cardHero{
+        width: 100%;
+        height: 130px;
+        padding: 0 8px;
+    }
+    .cardDescriptionList{
+        gap: 40px;
+    }
+    .cardDescription{
+        font-size: 8px;
+    }
+    
+    .cardParametersList{
+        gap: 12px;
+    }
+    
+    .cardParameter{
+        width: 50px;
+        font-size: 25px;
+    }
+    .cardParameterSlash{
+        width: 10px;
+        font-size: 25px; 
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .cardCode{
+        top:-15px;
+        left:43px;
+        width: 34px;
+        padding: 4px 0px 2px 0px;
+        margin: 0;
+        font-size: 10px;
+    }
+    .Card{
+        width: 120px;
+        min-height: 150px;
+    }
+    .cardHeader{
+        padding: 0 5px;
+        font-size: 10px;
+    }
+    .cardHeaderTitle{
+    padding: 0;
+    font-size: 10px;
+    }
+    .cardButtonList{
+        gap: 5px;
+    }
+    .cardButton{
+        width: 45px;
+        height: 25px;
+        font-size: 6px;
+    }
+    .cardToolName{
+        font-family: Oswald;
+        height: 20px;
+        font-weight: 600;
+        font-size: 7px;
+        text-align: center;
+        margin: 0;
+    }
+    .cardHero{
+        width: 100%;
+        height: 100px;
+        padding: 0 8px;
+    }
+    .cardDescriptionList{
+        gap: 20px;
+    }
+    .cardDescription{
+        font-size: 6px;
+    }
+    
+    .cardParametersList{
+        gap: 6px;
+    }
+    
+    .cardParameter{
+        width: 30px;
+        font-size: 18px;
+    }
+    .cardParameterSlash{
+        width: 7px;
+        font-size: 16px; 
+    }
+    .cardPhotoButton{
+        width: 25px;
+        height: 25px;
+        right:-15px;
+        top:-10px;
+        transition: scale 0.3s ease-in-out;
+        }
+        .cardIco{
+            width: 15px;
+        }
+  }
