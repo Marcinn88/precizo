@@ -17,6 +17,13 @@ export const Nav = ({ selected, token }) => {
   const closeMenu = () => {
     navMenuChange(false);
   };
+
+  const logOut = () => {
+    localStorage.setItem("token", JSON.stringify({ token: "" }));
+    setTimeout(() => {
+      ref();
+    }, 300);
+  };
   return (
     <>
       <div className={styles.mainNav}>
@@ -33,7 +40,11 @@ export const Nav = ({ selected, token }) => {
             </Link>
             <li className={styles.mainNav_menuEl}>INFORMACJE</li>
             <li className={styles.mainNav_menuEl}>POMOC</li>
-            <li className={styles.mainNav_menuEl_last}>WYLOGUJ</li>
+            <Link to="/precizo/">
+              <li onClick={logOut} className={styles.mainNav_menuEl_last}>
+                WYLOGUJ
+              </li>
+            </Link>
           </ul>
         )}
         <Link to="/precizo/">

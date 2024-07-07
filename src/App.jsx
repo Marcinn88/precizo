@@ -5,7 +5,7 @@ import { OrderList } from "./components/OrderList";
 import { Layout } from "./layouts/layout";
 
 const App = () => {
-  console.log("server uruchomiony");
+  // console.log("server uruchomiony");
   const tokenChecker = () => {
     try {
       const token = localStorage.getItem("token");

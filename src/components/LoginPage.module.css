@@ -1,0 +1,48 @@
+.loginPage_wrapper{
+    /* background-color: rgb(122, 0, 0); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap:40px;
+}
+.loginPage_logoImg{
+width: 700px;
+}
+.loginPage_Form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.loginPage_FormField{
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color:#1c1c1a;
+    text-align: center;
+    font-family: Oswald;
+    font-size: 20px;
+}
+
+.FormBtn{
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color:#1c1c1a;
+    text-align: center;
+    font-family: Oswald;
+    font-size: 20px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.FormBtn:hover{
+    border: 1px solid red;
+}
