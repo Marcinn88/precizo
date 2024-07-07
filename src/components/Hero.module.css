@@ -4,6 +4,7 @@
 width: 100%;
 padding: 40px;
 display: flex;
-justify-content: left;
+justify-content: center;
 flex-wrap: wrap;
+box-sizing: border-box;
 }
