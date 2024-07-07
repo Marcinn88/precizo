@@ -1,0 +1,94 @@
+{
+    "cards":[
+        {
+            "local_kod":"13Y+",
+            "gniazdo":"05",
+            "nazwa_zadania":"1. Planowanie",
+            "nazwa_narzedzia":"Płytka tokarska VBMT160408-PF 1515",
+            "edge_current":"1",
+            "edge_all":"6",
+            "counter":"15",
+            "life":"90"
+        },
+        {
+            "local_kod":"15Y-",
+            "gniazdo":"04",
+            "nazwa_zadania":"2. Toczenie zgr.",
+            "nazwa_narzedzia":"Płytka tokarska VBMT160408-PF 1515",
+            "edge_current":"1",
+            "edge_all":"6",
+            "counter":"35",
+            "life":"40"
+        },
+        {
+            "local_kod":"12Y+",
+            "gniazdo":"03",
+            "nazwa_zadania":"3. Toczenie wyk.",
+            "nazwa_narzedzia":"Płytka tokarska VBMT160408-PF 1515",
+            "edge_current":"1",
+            "edge_all":"6",
+            "counter":"5",
+            "life":"90"
+        },
+        {
+            "local_kod":"21Y+",
+            "gniazdo":"06",
+            "nazwa_zadania":"4. Nawiercanie",
+            "nazwa_narzedzia":"Nawiertak",
+            "edge_current":"1",
+            "edge_all":"1",
+            "counter":"34",
+            "life":"45"
+        },
+        {
+            "local_kod":"12Y+",
+            "gniazdo":"07",
+            "nazwa_zadania":"5. Wiercenie",
+            "nazwa_narzedzia":"Wiertło HM 20",
+            "edge_current":"1",
+            "edge_all":"6",
+            "counter":"61",
+            "life":"72"
+        },
+        {
+            "local_kod":"13Y+",
+            "gniazdo":"02",
+            "nazwa_zadania":"6. Gwintowanie",
+            "nazwa_narzedzia":"Gwintownik M20-6H",
+            "edge_current":"1",
+            "edge_all":"6",
+            "counter":"24",
+            "life":"49"
+        },
+        {
+            "local_kod":"11Y+",
+            "gniazdo":"01",
+            "nazwa_zadania":"7. Odcinanie",
+            "nazwa_narzedzia":"Płytka tokarska VBMT160408-PF 1515",
+            "edge_current":"1",
+            "edge_all":"6",
+            "counter":"21",
+            "life":"55"
+        },
+        {
+            "local_kod":"12Y-",
+            "gniazdo":"08",
+            "nazwa_zadania":"8. Planowanie",
+            "nazwa_narzedzia":"Płytka tokarska VBMT160408-PF 1515",
+            "edge_current":"1",
+            "edge_all":"6",
+            "counter":"10",
+            "life":"12"
+        },
+        {
+            "local_kod":"13Y+",
+            "gniazdo":"09",
+            "nazwa_zadania":"9. Fazowanie",
+            "nazwa_narzedzia":"Płytka tokarska VBMT160408-PF 1515",
+            "edge_current":"1",
+            "edge_all":"6",
+            "counter":"104",
+            "life":"124"
+        }
+    ]
+    }

@@ -39,7 +39,7 @@
     box-sizing: border-box;
     justify-content: space-between;
     padding: 0 20px;
-    background-color: black;
+    background-color: #1c1c1a;
     color:white;
     font-size: 20px;
     max-height: 50px;
@@ -51,9 +51,11 @@ padding: 0;
 }
 .cardHeaderTitle{
 padding: 0;
+font-size: 18px;
 }
 .cardToolName{
     font-family: Oswald;
+    height: 45px;
     font-weight: 600;
     font-size: 15px;
     text-align: center;
@@ -61,13 +63,14 @@ padding: 0;
 }
 .cardHero{
     width: 100%;
+    height: 150px;
     padding: 0 10px;
     box-sizing: border-box;
 }
 .cardDescriptionList{
     display: flex;
     list-style: none;
-    gap: 15px;
+    gap: 50px;
     justify-content: center;
     align-items: center;   
     padding: 0;
@@ -90,4 +93,72 @@ padding: 0;
     padding: 0;
     margin: 0;
     width: 100%;
+}
+
+.cardParameter{
+    width: 60px;
+    margin:0 ;
+    padding: 0;
+    font-size: 30px;
+    text-align: center; 
+}
+.cardParameterSlash{
+    width: 10px;
+    margin:0 ;
+    padding: 0;
+    font-size: 30px;
+    text-align: center;  
+}
+
+.cardButton{
+    background-color: white;
+    color:black;
+    width: 95px;
+    height: 45px;
+    font-size: 15px;
+    font-weight: 800;
+    font-family: "Kufam", sans-serif;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 8px 8px 10px -10px rgba(66, 68, 90, 1);
+    transition: all 0.3s ease-in-out;
+}
+.cardButton:hover{
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid rgb(255, 0, 0);
+    color: white;
+    font-weight: 800;
+}
+
+.cardButtonList{
+    margin-top: 0;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+}
+
+.cardPhotoButton{
+background-color: #1c1c1a;
+width: 40px;
+height: 40px;
+position: absolute;
+right:-15px;
+top:-10px;
+border-radius: 50%;
+border: 1px solid white;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: scale 0.3s ease-in-out;
+}
+
+.cardPhotoButton:hover{
+    scale:1.1;
+    cursor: pointer;
+}
+
+.cardIco{
+    width: 25px;
 }

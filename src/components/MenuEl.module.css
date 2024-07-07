@@ -11,8 +11,11 @@
     font-family: Oswald;
     font-size: 25px;
     flex-direction: column;
+    transition: all 0.3s ease-in-out;
 }
-
+.MenuEl_wrapper:hover{
+border: 1px solid red;
+}
 .MenuEl_img{
     width: 100px;
     height: 100px;

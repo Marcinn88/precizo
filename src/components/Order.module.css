@@ -17,14 +17,14 @@
     font-style: normal;
     margin: 30px auto;
     max-width: 800px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     border: 1px solid transparent;
 }
 .OrderWrapper:hover{
     background-color: #141414;
     cursor: pointer;
     box-shadow: 8px 8px 24px -16px rgba(66, 68, 90, 1);
-    border: 1px solid rgb(56, 56, 56);
+    border: 1px solid rgb(255, 0, 0);
 }
 
 .OrderParameters{

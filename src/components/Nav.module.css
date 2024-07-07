@@ -22,7 +22,7 @@
 
 .mainNav_menuIco{
     width: 40px;
-    transition: scale 0.5s ease-in-out;
+    transition: scale 0.3s ease-in-out;
 }
 .mainNav_menuIco:hover{
     scale: 1.15;
@@ -93,13 +93,13 @@
     color:white;
 }
 .mainNav_menuEl_last{
-border-radius: 0 0 0 10px;
+    border-radius: 0 0 0 10px;
 }
 
 .mainNav_menuEl:hover,
 .mainNav_menuEl_last:hover{
-background-color: #333333;
-cursor: pointer;
+    background-color: #333333;
+    cursor: pointer;
 }
 .mainNav_Shadowbox{
     position: fixed;

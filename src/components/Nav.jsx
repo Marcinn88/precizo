@@ -36,7 +36,9 @@ export const Nav = ({ selected, token }) => {
             <li className={styles.mainNav_menuEl_last}>WYLOGUJ</li>
           </ul>
         )}
-        <img className={styles.mainNav_logoImg} src={logoImg} alt="logo" />
+        <Link to="/precizo/">
+          <img className={styles.mainNav_logoImg} src={logoImg} alt="logo" />
+        </Link>
         <div className={styles.mainNav_rightSide}>
           <ul className={styles.mainNav_list}>
             <li className={styles.mainNav_el_title}>Zalogowany jako:</li>
