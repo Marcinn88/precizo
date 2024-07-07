@@ -110,3 +110,24 @@
     height: 100%;
     z-index: 1;
 }
+
+@media screen and (max-width: 500px) {
+    .mainNav_list{
+        display: none;
+    }
+    .mainNav_rightSide{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        min-width: 50px;
+
+    }
+    .mainNav_logoImg{
+        width: 150px;
+    }
+    .mainNav{
+
+        padding: 0 10px;
+
+    }
+  }

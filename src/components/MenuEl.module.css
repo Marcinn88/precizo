@@ -4,7 +4,7 @@
     background-color: #1c1c1a;
     border-radius: 10px;
     border: 1px solid black;
-    margin: 20px;
+    margin: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,3 +25,48 @@ border: 1px solid red;
 .MenuEl_title{
     margin: 0;
 }
+
+@media screen and (max-width: 500px) {
+    .MenuEl_wrapper{
+        width: 110px;
+        height: 110px;
+        background-color: #1c1c1a;
+        border-radius: 10px;
+        border: 1px solid black;
+        margin: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Oswald;
+        font-size: 15px;
+        flex-direction: column;
+        transition: all 0.3s ease-in-out;
+    }
+    .MenuEl_img{
+        width: 70px;
+        height: 70px;
+        margin: 0;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .MenuEl_wrapper{
+        width: 110px;
+        height: 110px;
+        background-color: #1c1c1a;
+        border-radius: 10px;
+        border: 1px solid black;
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Oswald;
+        font-size: 15px;
+        flex-direction: column;
+        transition: all 0.3s ease-in-out;
+    }
+    .MenuEl_img{
+        width: 70px;
+        height: 70px;
+        margin: 0;
+    }
+  }
