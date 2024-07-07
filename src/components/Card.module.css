@@ -7,6 +7,11 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    line-height: 1.4;
+    font-family: "Kufam", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .cardCode{
@@ -23,27 +28,22 @@
     border-radius: 5px;
     color: white;
     list-style: none;
-    line-height: 1.4;
-    font-family: "Kufam", sans-serif;
-    font-weight: 600;
-    font-style: normal;
     font-size: 16px;
 }
 
 .cardHeader{
+    width: 100%;
     list-style: none;
     display: flex;
     align-items: center;
+    box-sizing: border-box;
     justify-content: space-between;
     padding: 0 20px;
     background-color: black;
     color:white;
-    line-height: 1.4;
-    font-family: "Kufam", sans-serif;
-    font-weight: 600;
-    font-style: normal;
     font-size: 20px;
     max-height: 50px;
+    margin: 20px 0 5px 0;
 }
 .cardHeaderNumber{
 color:red;
@@ -51,4 +51,43 @@ padding: 0;
 }
 .cardHeaderTitle{
 padding: 0;
+}
+.cardToolName{
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+}
+.cardHero{
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.cardDescriptionList{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;   
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.cardDescription{
+    margin: 8px 0 0 0 ;
+    padding: 0;
+    font-size: 10px;
+    text-align: center;
+}
+
+.cardParametersList{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;   
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }

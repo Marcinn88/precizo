@@ -13,25 +13,45 @@ export const Card = ({ token }) => {
             <p className={styles.cardHeaderTitle}>1. Planowanie</p>
           </li>
         </ul>
-        <p>Płytka tokarska VBMT160408-PF 1515</p>
-        <div>
-          <p>krawędź</p>
-          <ul>
-            <li>aktualna</li>
-            <li>wszystkie</li>{" "}
+        <p className={styles.cardToolName}>
+          Płytka tokarska VBMT160408-PF 1515
+        </p>
+        <div className={styles.cardHero}>
+          <p className={styles.cardDescription}>krawędź</p>
+          <ul className={styles.cardDescriptionList}>
+            <li>
+              <p className={styles.cardDescription}>aktualna</p>
+            </li>
+            <li>
+              <p className={styles.cardDescription}>wszystkie</p>
+            </li>
           </ul>
-          <ul>
-            <li>1</li>
-            <li>/</li>
-            <li>6</li>
+          <ul className={styles.cardParametersList}>
+            <li>
+              <p>1</p>
+            </li>
+            <li>
+              <p>/</p>
+            </li>
+            <li>
+              <p>6</p>
+            </li>
           </ul>
-          <ul>
-            <li>zmiana za</li>
-            <li>żywotność</li>
+          <ul className={styles.cardDescriptionList}>
+            <li>
+              <p className={styles.cardDescription}>zmiana za</p>
+            </li>
+            <li>
+              <p className={styles.cardDescription}>żywotność</p>
+            </li>
           </ul>
-          <ul>
-            <li>50</li>
-            <li>99</li>
+          <ul className={styles.cardParametersList}>
+            <li>
+              <p>50</p>
+            </li>
+            <li>
+              <p>99</p>
+            </li>
           </ul>
         </div>
         <ul>
