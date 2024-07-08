@@ -1,0 +1,115 @@
+.Lab_container{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 40px;
+    /* background-color: rgb(22, 42, 59); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Oswald", sans-serif;
+}
+.Lab_table{
+    list-style: none;
+    padding: 5px;
+    /* background-color: rgb(16, 0, 75); */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+}
+.Lab_rowC{
+    /* background-color: rgb(70, 70, 70); */
+    padding: 0px;
+    display: flex;
+}
+.Lab_row,
+.Lab_header_row{
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: default;
+
+}
+.el_header_no{
+    border-top-left-radius: 5px;
+}
+.el_header_status{
+    border-top-right-radius: 5px;
+}
+.Lab_rowC:last-child li:last-child{
+    border-bottom-right-radius: 5px;
+}
+.Lab_rowC:last-child li:first-child{
+    border-bottom-left-radius: 5px;
+}
+.el_header_no,
+.el_header_zb,
+.el_header_id,
+.el_header_name,
+.el_header_kod,
+.el_header_status{
+    background-color: rgb(122, 122, 122);
+    padding: 10px 3px;
+    display: flex;
+    box-sizing: border-box;
+    margin: 1px 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600px;
+}
+
+.el_no,
+.el_zb,
+.el_id,
+.el_name,
+.el_kod,
+.el_status{
+    background-color: rgb(63, 63, 63);
+    padding: 5px 3px;
+    display: flex;
+    box-sizing: border-box;
+    margin: 1px 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400px;
+}
+
+.Lab_row:hover{
+    border-bottom: 1px solid red;
+    border-top: 1px solid red;
+    cursor: pointer;
+}
+
+
+.el_header_no,
+.el_no{
+    width: calc((100%/21)*2);
+}
+.el_header_zb,
+.el_zb{
+    width: calc((100%/21)*6);
+}
+.el_header_id,
+.el_id{
+    width: calc((100%/21)*4);
+}
+.el_header_kod,
+.el_kod{
+    width: calc((100%/21));
+}
+.el_header_name,
+.el_name{
+    width: calc((100%/21)*5);
+}
+.el_header_status,
+.el_status{
+    width: calc((100%/21)*3);
+}
+
+

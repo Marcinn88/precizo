@@ -3,6 +3,7 @@ import { Dashboard } from "./components/Dashboard";
 import { Main } from "./components/Main";
 import { OrderList } from "./components/OrderList";
 import { Layout } from "./layouts/layout";
+import { Lab } from "./components/Lab";
 
 const App = () => {
   // console.log("server uruchomiony");
@@ -30,6 +31,7 @@ const App = () => {
           path="/precizo/dashboard"
           element={<Dashboard token={tokenChecker()} />}
         />
+        <Route path="/precizo/lab" element={<Lab token={tokenChecker()} />} />
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Route>
     </Routes>
