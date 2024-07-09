@@ -12,6 +12,7 @@ import barcode from "../images/barcode.svg";
 import results_ico from "../images/results.svg";
 
 import data from "../JSON/lab.json";
+import data_kategorie from "../JSON/kategorie.json";
 
 export const Lab = ({ token }) => {
   const [extended, setExtended] = useState();
@@ -35,6 +36,7 @@ export const Lab = ({ token }) => {
                 </span>
                 <div className={styles.newTest_Slider}>
                   <p>Kategoria badania</p>
+                  <ul></ul>
                 </div>
                 <input
                   className={styles.newTest_input}

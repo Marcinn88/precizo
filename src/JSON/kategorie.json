@@ -1,0 +1,24 @@
+{
+    "orders":[
+        {
+            "kategoria":"Zlecenie Produkcyjne",
+            "kod":"ZP"
+        },
+        {
+            "kategoria":"Zlecenie Naprawcze",
+            "kod":"ZN"
+        },
+        {
+            "kategoria":"Kontrola Jakości",
+            "kod":"KJ"
+        },
+        {
+            "kategoria":"Kontrola Dostaw",
+            "kod":"KD"
+        },
+        {
+            "kategoria":"ISIR",
+            "kod":"IS"
+        }
+    ]
+    }
