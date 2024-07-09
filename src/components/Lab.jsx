@@ -1,5 +1,5 @@
 import styles from "./Lab.module.css";
-
+import { useState } from "react";
 import { nanoid } from "nanoid";
 
 import { Nav } from "./Nav";
@@ -13,7 +13,8 @@ import results from "../images/results.svg";
 import data from "../JSON/lab.json";
 
 export const Lab = ({ token }) => {
-  console.log(data.lab);
+  const [extended, setExtended] = useState();
+
   return (
     <>
       {token === "admin" ? (
@@ -39,17 +40,45 @@ export const Lab = ({ token }) => {
                   <li className={styles.el_header_status}>Status</li>
                 </ul>
               </li>
-              {data.lab.map(({ queue, order, id, code, name, status }) => {
+              {data.lab.map(({ queue, order, index, code, name, status }) => {
                 return (
-                  <li className={styles.Lab_rowC}>
-                    <ul className={styles.Lab_row}>
-                      <li className={styles.el_no}>{queue}</li>
-                      <li className={styles.el_zb}>{order}</li>
-                      <li className={styles.el_id}>{id}</li>
-                      <li className={styles.el_kod}>{code}</li>
-                      <li className={styles.el_name}>{name}</li>
-                      <li className={styles.el_status}>{status}</li>
-                    </ul>
+                  <li className={styles.Lab_rowC} id={order}>
+                    {extended === order ? (
+                      <div
+                        className={styles.Lab_rowContainer}
+                        onClick={() => {
+                          setExtended("");
+                        }}
+                      >
+                        <ul className={styles.Lab_row}>
+                          <li className={styles.el_no}>{queue}</li>
+                          <li className={styles.el_zb}>{order}</li>
+                          <li className={styles.el_id}>{index}</li>
+                          <li className={styles.el_kod}>{code}</li>
+                          <li className={styles.el_name}>{name}</li>
+                          <li className={styles.el_status}>{status}</li>
+                        </ul>
+                        <div className={styles.Lab_rowInfo}>
+                          <p>
+                            Tu pojawi się więcej informacji o zleceniu {order}
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <ul
+                        className={styles.Lab_row}
+                        onClick={() => {
+                          setExtended(order);
+                        }}
+                      >
+                        <li className={styles.el_no}>{queue}</li>
+                        <li className={styles.el_zb}>{order}</li>
+                        <li className={styles.el_id}>{index}</li>
+                        <li className={styles.el_kod}>{code}</li>
+                        <li className={styles.el_name}>{name}</li>
+                        <li className={styles.el_status}>{status}</li>
+                      </ul>
+                    )}
                   </li>
                 );
               })}
