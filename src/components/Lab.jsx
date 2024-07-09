@@ -8,25 +8,87 @@ import { Link } from "react-router-dom";
 import { MenuSmallEl } from "./MenuSmallEl";
 
 import add from "../images/add.svg";
-import results from "../images/results.svg";
+import barcode from "../images/barcode.svg";
+import results_ico from "../images/results.svg";
 
 import data from "../JSON/lab.json";
 
 export const Lab = ({ token }) => {
   const [extended, setExtended] = useState();
+  const [newTest, setNewTest] = useState(false);
+  const [results, setResults] = useState(false);
 
   return (
     <>
       {token === "admin" ? (
         <>
+          {newTest && (
+            <>
+              <div className={styles.newTest}>
+                <p className={styles.newTest_Title}>Dodaj badanie</p>
+                <span className={styles.Lab_btn_wrapper}>
+                  <MenuSmallEl
+                    key={nanoid()}
+                    obraz={barcode}
+                    nazwa="Zeskanuj zlecenie"
+                  />
+                </span>
+                <div className={styles.newTest_Slider}>
+                  <p>Kategoria badania</p>
+                </div>
+                <input
+                  className={styles.newTest_input}
+                  name="zlecenie"
+                  type="text"
+                  placeholder="Numer zlecenia"
+                />{" "}
+                <input
+                  className={styles.newTest_input}
+                  name="zlecenie"
+                  type="text"
+                  placeholder="Numer operacji"
+                />
+                <button className={styles.newTest_button}>Dodaj badanie</button>
+              </div>
+              <div
+                onClick={() => {
+                  setNewTest(false);
+                }}
+                className={styles.newTest_shadowbox}
+              ></div>
+            </>
+          )}
+          {results && (
+            <>
+              <div className={styles.results}>
+                <p className={styles.results_Title}>Wyniki</p>
+              </div>
+              <div
+                onClick={() => {
+                  setResults(false);
+                }}
+                className={styles.results_shadowbox}
+              ></div>
+            </>
+          )}
           <Nav />
           <div className={styles.Lab_btn_container}>
-            <Link to="/precizo/">
+            <span
+              className={styles.Lab_btn_wrapper}
+              onClick={() => {
+                setNewTest(true);
+              }}
+            >
               <MenuSmallEl key={nanoid()} obraz={add} nazwa="Nowe badanie" />
-            </Link>
-            <Link to="/precizo/">
-              <MenuSmallEl key={nanoid()} obraz={results} nazwa="Wyniki" />
-            </Link>
+            </span>
+            <span
+              className={styles.Lab_btn_wrapper}
+              onClick={() => {
+                setResults(true);
+              }}
+            >
+              <MenuSmallEl key={nanoid()} obraz={results_ico} nazwa="Wyniki" />
+            </span>
           </div>
           <div className={styles.Lab_container}>
             <ul className={styles.Lab_table}>
