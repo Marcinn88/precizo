@@ -27,26 +27,29 @@ export const Nav = ({ selected, token }) => {
   return (
     <>
       <div className={styles.mainNav}>
-        {navMenu && (
-          <div className={styles.mainNav_Shadowbox} onClick={closeMenu}></div>
-        )}
-        {navMenu && (
-          <ul className={styles.mainNav_menu}>
-            <Link to="/precizo/">
-              <li className={styles.mainNav_menuEl}>MENU</li>
-            </Link>
-            <Link to="/precizo/orders/">
-              <li className={styles.mainNav_menuEl}>ZLECENIA</li>
-            </Link>
-            <li className={styles.mainNav_menuEl}>INFORMACJE</li>
-            <li className={styles.mainNav_menuEl}>POMOC</li>
-            <Link to="/precizo/">
-              <li onClick={logOut} className={styles.mainNav_menuEl_last}>
-                WYLOGUJ
-              </li>
-            </Link>
-          </ul>
-        )}
+        <div
+          className={
+            navMenu ? styles.mainNav_Shadowbox : styles.mainNav_Shadowbox_off
+          }
+          onClick={closeMenu}
+        ></div>
+
+        <ul className={navMenu ? styles.mainNav_menu : styles.mainNav_menu_off}>
+          <Link to="/precizo/">
+            <li className={styles.mainNav_menuEl}>MENU</li>
+          </Link>
+          <Link to="/precizo/orders/">
+            <li className={styles.mainNav_menuEl}>ZLECENIA</li>
+          </Link>
+          <li className={styles.mainNav_menuEl}>INFORMACJE</li>
+          <li className={styles.mainNav_menuEl}>POMOC</li>
+          <Link to="/precizo/">
+            <li onClick={logOut} className={styles.mainNav_menuEl_last}>
+              WYLOGUJ
+            </li>
+          </Link>
+        </ul>
+
         <Link to="/precizo/">
           <img className={styles.mainNav_logoImg} src={logoImg} alt="logo" />
         </Link>
