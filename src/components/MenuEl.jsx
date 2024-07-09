@@ -1,6 +1,6 @@
 import styles from "./MenuEl.module.css";
 
-export const MenuEl = ({ token, obraz, nazwa }) => {
+export const MenuEl = ({ obraz, nazwa }) => {
   return (
     <>
       <div className={styles.MenuEl_wrapper}>

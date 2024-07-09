@@ -1,0 +1,61 @@
+.MenuSmallEl_wrapper{
+    width: 180px;
+    height: 180px;
+    background-color: #1c1c1a;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Oswald;
+    font-size: 25px;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+}
+.MenuSmallEl_wrapper:hover{
+border: 1px solid red;
+}
+.MenuSmallEl_img{
+    width: 100px;
+    height: 100px;
+    margin: 0;
+}
+
+.MenuSmallEl_title{
+    margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+    .MenuSmallEl_wrapper{
+        width: 130px;
+        height: 130px;
+        margin: 15px;
+        font-size: 15px;
+    }
+    .MenuSmallEl_img{
+        width: 70px;
+        height: 70px;
+        margin: 0;
+    }
+  }
+  @media screen and (max-width: 410px) {
+    .MenuSmallEl_wrapper{
+        width: 120px;
+        height: 120px;
+        margin: 5px;
+    }
+  }  
+  @media screen and (max-width: 350px) {
+    .MenuSmallEl_wrapper{
+        width: 90px;
+        height: 90px;
+        margin: 5px;
+        font-size: 12px;
+    }
+    .MenuSmallEl_img{
+        width: 50px;
+        height: 50px;
+        margin: 0;
+    }
+  }

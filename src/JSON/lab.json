@@ -1,0 +1,44 @@
+{
+    "lab":[
+        {
+            "queue":"1",
+            "order":"ZB01554/2024/2",
+            "id":"W05145",
+            "code":"ZP",
+            "name":"Wał HXE 811234",
+            "status":"W trakcie"
+        },
+        {
+            "queue":"2",
+            "order":"ZB02234/2024/1",
+            "id":"W02345",
+            "code":"ZP",
+            "name":"Wał 6-kąt 0222022",
+            "status":"Kolejka"
+        },
+        {
+            "queue":"3",
+            "order":"ZB03211/2024/1",
+            "id":"W05866",
+            "code":"ZP",
+            "name":"Półoś CC182234",
+            "status":"Kolejka"
+        },
+        {
+            "queue":"4",
+            "order":"ZB01111/2024/2",
+            "id":"W07654",
+            "code":"ZP",
+            "name":"Sworzeń 12323234",
+            "status":"Kolejka"
+        },
+        {
+            "queue":"5",
+            "order":"ZB01439/2024/1",
+            "id":"W01932",
+            "code":"ZP",
+            "name":"Wałek ABC 1234343",
+            "status":"Kolejka"
+        }
+    ]
+    }

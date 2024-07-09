@@ -8,6 +8,11 @@
     align-items: center;
     font-family: "Oswald", sans-serif;
 }
+.Lab_btn_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .Lab_table{
     list-style: none;
     padding: 5px;
