@@ -13,11 +13,25 @@ import results_ico from "../images/results.svg";
 
 import data from "../JSON/lab.json";
 import data_kategorie from "../JSON/kategorie.json";
+import { number } from "prop-types";
 
 export const Lab = ({ token }) => {
   const [extended, setExtended] = useState();
   const [newTest, setNewTest] = useState(false);
   const [results, setResults] = useState(false);
+  const [category, setCategory] = useState("");
+  const [slider, setSlider] = useState(false);
+  const [order, setOrder] = useState({});
+
+  const toogleSlider = () => {
+    setSlider(!slider);
+  };
+
+  const submitNewOrder = (e) => {
+    e.preventDefault();
+    console.log(order);
+    setNewTest(false);
+  };
 
   return (
     <>
@@ -25,7 +39,15 @@ export const Lab = ({ token }) => {
         <>
           {newTest && (
             <>
-              <div className={styles.newTest}>
+              <form onSubmit={submitNewOrder} className={styles.newTest}>
+                {slider && (
+                  <div
+                    className={styles.newTest_dropdown_backdrop}
+                    onClick={() => {
+                      setSlider(false);
+                    }}
+                  ></div>
+                )}
                 <p className={styles.newTest_Title}>Dodaj badanie</p>
                 <span className={styles.Lab_btn_wrapper}>
                   <MenuSmallEl
@@ -34,27 +56,72 @@ export const Lab = ({ token }) => {
                     nazwa="Zeskanuj zlecenie"
                   />
                 </span>
-                <div className={styles.newTest_Slider}>
-                  <p>Kategoria badania</p>
-                  <ul></ul>
+                <div className={styles.newTest_Slider_Container}>
+                  <div
+                    className={styles.newTest_Slider}
+                    onClick={() => {
+                      toogleSlider();
+                    }}
+                  >
+                    {category === "" ? (
+                      <p>Kategoria badania</p>
+                    ) : (
+                      <p className={styles.newTest_Slider_text}>{category}</p>
+                    )}
+                  </div>
+                  {slider && (
+                    <>
+                      <div className={styles.newTest_dropdown}>
+                        <ul>
+                          {data_kategorie.kategoria.map(({ kategoria }) => {
+                            return (
+                              <li
+                                className={styles.slider_el}
+                                onClick={() => {
+                                  setCategory(kategoria);
+                                  setOrder({ ...order, category: kategoria });
+                                  setSlider(false);
+                                }}
+                              >
+                                <p>{kategoria}</p>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    </>
+                  )}
                 </div>
                 <input
                   className={styles.newTest_input}
+                  onChange={(e) => {
+                    setOrder({ ...order, number: e.target.value });
+                  }}
                   name="zlecenie"
                   type="text"
                   placeholder="Numer zlecenia"
-                />{" "}
+                  pattern="[pzPZ]{2}[0-9]{5}/[0-9]{4}$"
+                  title="Podaj pełny numer zlecenia. np. ZP01234/2024"
+                  required
+                />
                 <input
                   className={styles.newTest_input}
                   name="zlecenie"
                   type="text"
                   placeholder="Numer operacji"
+                  required
+                  onChange={(e) => {
+                    setOrder({ ...order, operation: e.target.value });
+                  }}
                 />
-                <button className={styles.newTest_button}>Dodaj badanie</button>
-              </div>
+                <button type="submit" className={styles.newTest_button}>
+                  Dodaj badanie
+                </button>
+              </form>
               <div
                 onClick={() => {
                   setNewTest(false);
+                  setSlider(false);
                 }}
                 className={styles.newTest_shadowbox}
               ></div>
@@ -79,6 +146,13 @@ export const Lab = ({ token }) => {
               className={styles.Lab_btn_wrapper}
               onClick={() => {
                 setNewTest(true);
+                setCategory("");
+                setSlider(false);
+                setOrder({
+                  category: "",
+                  number: "",
+                  operation: "",
+                });
               }}
             >
               <MenuSmallEl key={nanoid()} obraz={add} nazwa="Nowe badanie" />
