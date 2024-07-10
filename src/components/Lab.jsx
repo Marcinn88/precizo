@@ -106,9 +106,11 @@ export const Lab = ({ token }) => {
                 />
                 <input
                   className={styles.newTest_input}
-                  name="zlecenie"
+                  name="operacja"
                   type="text"
                   placeholder="Numer operacji"
+                  pattern="[0-9]{2,4}"
+                  title="Podaj numer operacji."
                   required
                   onChange={(e) => {
                     setOrder({ ...order, operation: e.target.value });
