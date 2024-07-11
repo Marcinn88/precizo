@@ -77,6 +77,15 @@ export const Circles = ({ token }) => {
                 >
                   <p>Reset</p>
                 </div>
+                <div
+                  className={styles.Circles_resetBox}
+                  onClick={() => {
+                    setMouse((mouse) => mouse.slice(0, -1));
+                    setNumber(number - 1);
+                  }}
+                >
+                  <p>Cofnij</p>
+                </div>
               </div>
               <div className={styles.Circles_hero}>
                 <img
