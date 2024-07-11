@@ -26,7 +26,7 @@
 }
 .Circles_drawing{
     height: 99vh;
-    cursor: pointer;
+    cursor:none;
 }
 .Circle_pointer{
     position: absolute;
