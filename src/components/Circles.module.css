@@ -20,7 +20,7 @@
 .Circles_heroContainer{
     /* background-color: green; */
     display: flex;
-    width: 100%;
+    min-width: 100%;
     justify-content: center;
     align-items: center;
 }
@@ -40,8 +40,8 @@
 .Circles_preview{
     width: 150px;
     height: 150px;
-    background-color: #363636;
-    border: 1px solid rgb(221, 221, 221);
+    background-color: #242424;
+    border: 1px solid rgb(95, 95, 95);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -68,3 +68,86 @@
     border-radius: 50%;
     color: black;
 }
+.Circles_colorBox{
+    margin-top: 15px;
+    width: 150px;
+    height: 80px;
+    background-color: #242424;
+    border: 1px solid rgb(95, 95, 95);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap:5px;
+}
+.Circles_colorBoxEl{
+    margin: 5px 0;
+    width: 25px;
+    height: 25px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.Circles_colorBoxEl:hover{
+    border: solid 1px white;
+}
+
+.Circles_resetBox{
+    margin-top: 15px;
+    width: 150px;
+    height: 50px;
+    background-color: #242424;
+    border: 1px solid rgb(95, 95, 95);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.Circles_resetBox:hover{
+    background-color: #414141;;
+}
+.Circles_resetBox p{
+margin: 0;
+font-family: "Kufam";
+font-size: 18px;
+}
+.Circle_rotateBox{
+    margin-top: 15px;
+    width: 150px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.Circle_rotateBox_Left,
+.Circle_rotateBox_Right{
+    width: 60px;
+    height: 60px;
+    background-color: #242424;
+    border: 1px solid rgb(95, 95, 95);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;  
+}
+.Circle_rotateBox_Left img,
+.Circle_rotateBox_Right img{
+    width: 50px;
+    transition: all 0.1s ease-in-out;
+}
+.Circle_rotateBox_Left img:hover,
+.Circle_rotateBox_Right img:hover{
+    scale: 1.1;
+}
+
+.Circle_rotateBox_Left:hover,
+.Circle_rotateBox_Right:hover{
+background-color: #414141;}

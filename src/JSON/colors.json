@@ -1,0 +1,21 @@
+{
+    "colors":[
+        {
+            "color":"red"
+        },        {
+            "color":"yellow"
+        },        {
+            "color":"orange"
+        },        {
+            "color":"green"
+        },        {
+            "color":"pink"
+        },        {
+            "color":"purple"
+        },        {
+            "color":"blue"
+        },        {
+            "color":"black"
+        }
+    ]
+    }
