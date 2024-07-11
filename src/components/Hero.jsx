@@ -12,6 +12,7 @@ import chart from "../images/chart.svg";
 import cart from "../images/cart.svg";
 import profile from "../images/profile.svg";
 import results from "../images/results.svg";
+import circles from "../images/circles.svg";
 import { LoginPage } from "./LoginPage";
 
 export const Hero = ({ token }) => {
@@ -44,6 +45,9 @@ export const Hero = ({ token }) => {
             </Link>
             <Link to="/precizo/lab/">
               <MenuEl key={nanoid()} obraz={results} nazwa="Laboratorium" />
+            </Link>
+            <Link to="/precizo/circles/">
+              <MenuEl key={nanoid()} obraz={circles} nazwa="Kółkowanie" />
             </Link>
           </div>
         </>
