@@ -95,6 +95,7 @@ export const Circles = ({ token }) => {
                 <div
                   style={{
                     transform: `translate(${position.x}px, ${position.y}px)`,
+                    border: `2px solid ${color}`,
                   }}
                   className={styles.Circle_pointer}
                 >
