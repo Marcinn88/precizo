@@ -16,6 +16,10 @@ export const Circles = ({ token }) => {
   const [number, setNumber] = useState(1);
   const [color, setColor] = useState("red");
   const [rotation, setRotation] = useState(0);
+  const [position, setPosition] = useState({
+    x: 0,
+    y: 0,
+  });
 
   return (
     <>
@@ -88,7 +92,21 @@ export const Circles = ({ token }) => {
                 </div>
               </div>
               <div className={styles.Circles_hero}>
+                <div
+                  style={{
+                    transform: `translate(${position.x}px, ${position.y}px)`,
+                  }}
+                  className={styles.Circle_pointer}
+                >
+                  {number}
+                </div>
                 <img
+                  onPointerMove={(e) => {
+                    setPosition({
+                      x: e.clientX,
+                      y: e.clientY,
+                    });
+                  }}
                   style={{ transform: "rotate(" + rotation + "deg)" }}
                   className={styles.Circles_drawing}
                   src={drawing}

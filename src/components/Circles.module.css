@@ -28,6 +28,21 @@
     height: 99vh;
     cursor: pointer;
 }
+.Circle_pointer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: #ff0000 solid 2px;
+    border-radius: 50%;
+    color: black;
+    left: -15px;
+    top: -15px;
+    z-index: 2;
+    pointer-events: none;
+}
 .Circles_sideBarLeft_title{
     color: grey;
     font-family: "Kufam";
