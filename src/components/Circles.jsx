@@ -104,8 +104,8 @@ export const Circles = ({ token }) => {
                 <img
                   onPointerMove={(e) => {
                     setPosition({
-                      x: e.clientX,
-                      y: e.clientY,
+                      x: e.pageX,
+                      y: e.pageY,
                     });
                   }}
                   style={{ transform: "rotate(" + rotation + "deg)" }}
