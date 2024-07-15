@@ -25,13 +25,12 @@ export const Circles = ({ token }) => {
   const [pointerVisible, setPointerVisible] = useState(true);
 
   const printImage = () => {
-    setPointerVisible(false);
     const input = document.getElementById("divToPrint");
     html2canvas(input).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const a = document.createElement("a");
       a.href = imgData;
-      a.download = "Circle.jpeg";
+      a.download = "Circle.png";
       a.click();
     });
     setPointerVisible(true);
@@ -116,36 +115,38 @@ export const Circles = ({ token }) => {
                 </div>
               </div>
               <div className={styles.Circles_hero} id="divToPrint">
-                <div
-                  style={{
-                    transform: `translate(${position.x}px, ${position.y}px)`,
-                    border: `2px solid ${color}`,
-                  }}
-                  className={styles.Circle_pointer}
-                >
-                  {number}
-                </div>
                 {pointerVisible && (
-                  <img
-                    onPointerMove={(e) => {
-                      setPosition({
-                        x: e.pageX,
-                        y: e.pageY,
-                      });
+                  <div
+                    data-html2canvas-ignore
+                    style={{
+                      transform: `translate(${position.x}px, ${position.y}px)`,
+                      border: `2px solid ${color}`,
                     }}
-                    style={{ transform: "rotate(" + rotation + "deg)" }}
-                    className={styles.Circles_drawing}
-                    src={drawing}
-                    alt="dokumentacja"
-                    onClick={(e) => {
-                      setNumber(number + 1);
-                      setMouse((mouse) => [
-                        ...mouse,
-                        { number: number, X: e.pageX - 15, Y: e.pageY - 15 },
-                      ]);
-                    }}
-                  />
+                    className={styles.Circle_pointer}
+                  >
+                    {number}
+                  </div>
                 )}
+
+                <img
+                  onPointerMove={(e) => {
+                    setPosition({
+                      x: e.pageX,
+                      y: e.pageY,
+                    });
+                  }}
+                  style={{ transform: "rotate(" + rotation + "deg)" }}
+                  className={styles.Circles_drawing}
+                  src={drawing}
+                  alt="dokumentacja"
+                  onClick={(e) => {
+                    setNumber(number + 1);
+                    setMouse((mouse) => [
+                      ...mouse,
+                      { number: number, X: e.pageX - 15, Y: e.pageY - 15 },
+                    ]);
+                  }}
+                />
                 {mouse.map(({ X, Y, number }) => {
                   return (
                     <div
