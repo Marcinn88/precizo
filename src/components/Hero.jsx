@@ -11,8 +11,6 @@ import hammer from "../images/hammer.svg";
 import chart from "../images/chart.svg";
 import cart from "../images/cart.svg";
 import profile from "../images/profile.svg";
-import results from "../images/results.svg";
-import circles from "../images/circles.svg";
 import inspection from "../images/inspection.svg";
 import { LoginPage } from "./LoginPage";
 
@@ -43,12 +41,6 @@ export const Hero = ({ token }) => {
             </Link>
             <Link to="/precizo/">
               <MenuEl key={nanoid()} obraz={profile} nazwa="Mój profil" />
-            </Link>
-            <Link to="/precizo/lab/">
-              <MenuEl key={nanoid()} obraz={results} nazwa="Laboratorium" />
-            </Link>
-            <Link to="/precizo/circles/">
-              <MenuEl key={nanoid()} obraz={circles} nazwa="Kółkowanie" />
             </Link>
             <Link to="/precizo/kj/">
               <MenuEl key={nanoid()} obraz={inspection} nazwa="KJ" />

@@ -6,6 +6,7 @@ import { Layout } from "./layouts/layout";
 import { Lab } from "./components/Lab";
 import { Circles } from "./components/Circles";
 import { Kj } from "./components/Kj";
+import { PSW } from "./components/PSW";
 
 const App = () => {
   // console.log("server uruchomiony");
@@ -33,12 +34,19 @@ const App = () => {
           path="/precizo/dashboard"
           element={<Dashboard token={tokenChecker()} />}
         />
-        <Route path="/precizo/lab" element={<Lab token={tokenChecker()} />} />
+        <Route path="/precizo/kj" element={<Kj token={tokenChecker()} />} />
         <Route
-          path="/precizo/circles"
+          path="/precizo/kj/lab"
+          element={<Lab token={tokenChecker()} />}
+        />
+        <Route
+          path="/precizo/kj/circles"
           element={<Circles token={tokenChecker()} />}
         />
-        <Route path="/precizo/kj" element={<Kj token={tokenChecker()} />} />
+        <Route
+          path="/precizo/kj/psw"
+          element={<PSW token={tokenChecker()} />}
+        />
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Route>
     </Routes>
