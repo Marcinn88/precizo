@@ -13,6 +13,7 @@ import cart from "../images/cart.svg";
 import profile from "../images/profile.svg";
 import results from "../images/results.svg";
 import circles from "../images/circles.svg";
+import inspection from "../images/inspection.svg";
 import { LoginPage } from "./LoginPage";
 
 export const Hero = ({ token }) => {
@@ -48,6 +49,9 @@ export const Hero = ({ token }) => {
             </Link>
             <Link to="/precizo/circles/">
               <MenuEl key={nanoid()} obraz={circles} nazwa="Kółkowanie" />
+            </Link>
+            <Link to="/precizo/kj/">
+              <MenuEl key={nanoid()} obraz={inspection} nazwa="KJ" />
             </Link>
           </div>
         </>

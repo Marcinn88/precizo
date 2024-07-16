@@ -5,6 +5,7 @@ import { OrderList } from "./components/OrderList";
 import { Layout } from "./layouts/layout";
 import { Lab } from "./components/Lab";
 import { Circles } from "./components/Circles";
+import { Kj } from "./components/Kj";
 
 const App = () => {
   // console.log("server uruchomiony");
@@ -37,6 +38,7 @@ const App = () => {
           path="/precizo/circles"
           element={<Circles token={tokenChecker()} />}
         />
+        <Route path="/precizo/kj" element={<Kj token={tokenChecker()} />} />
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Route>
     </Routes>
