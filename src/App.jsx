@@ -7,6 +7,7 @@ import { Lab } from "./components/Lab";
 import { Circles } from "./components/Circles";
 import { Kj } from "./components/Kj";
 import { PSW } from "./components/PSW";
+import { PSWmanual } from "./components/PSWmanual";
 
 const App = () => {
   // console.log("server uruchomiony");
@@ -44,8 +45,12 @@ const App = () => {
           element={<Circles token={tokenChecker()} />}
         />
         <Route
-          path="/precizo/kj/psw"
+          path="/precizo/kj/psw-auto"
           element={<PSW token={tokenChecker()} />}
+        />
+        <Route
+          path="/precizo/kj/psw-manual"
+          element={<PSWmanual token={tokenChecker()} />}
         />
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Route>

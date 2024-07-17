@@ -1,10 +1,10 @@
 import { Nav } from "./Nav";
-import styles from "./PSW.module.css";
+import styles from "./PSWmanual.module.css";
 import React, { useState } from "react";
 import ExcelJS from "exceljs";
 import { saveAs } from "file-saver";
 
-export const PSW = ({ token }) => {
+export const PSWmanual = ({ token }) => {
   const [file, setFile] = useState(null);
   const [tagToFind, setTagToFind] = useState("");
   const [replacementText, setReplacementText] = useState("");
@@ -54,7 +54,7 @@ export const PSW = ({ token }) => {
       <Nav />
       <div className={styles.PSW_wrapper}>
         <div>
-          <h2>Excel - Automatyczny generator PSW</h2>
+          <h2>Excel - Wyszukiwarka i edytor Tagów</h2>
           <input type="file" accept=".xlsx" onChange={handleFileChange} />
           <br />
           <input

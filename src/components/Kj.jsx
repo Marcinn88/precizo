@@ -13,11 +13,17 @@ export const Kj = ({ token }) => {
     <>
       <Nav />
       <div className={styles.Kj_wrapper}>
-        <Link to="/precizo/kj/psw">
-          <MenuEl key={nanoid()} obraz={document} nazwa="PSW" />
+        <Link to="/precizo/kj/psw-manual">
+          <MenuEl key={nanoid()} obraz={document} nazwa="PSW manual" />
+        </Link>
+        <Link to="/precizo/kj/psw-auto">
+          <MenuEl key={nanoid()} obraz={document} nazwa="PSW auto" />
         </Link>
         <Link to="/precizo/kj/lab/">
           <MenuEl key={nanoid()} obraz={results} nazwa="Laboratorium" />
+        </Link>
+        <Link to="/precizo/kj/circles/">
+          <MenuEl key={nanoid()} obraz={circles} nazwa="Kółkowanie" />
         </Link>
         <Link to="/precizo/kj/circles/">
           <MenuEl key={nanoid()} obraz={circles} nazwa="Kółkowanie" />
