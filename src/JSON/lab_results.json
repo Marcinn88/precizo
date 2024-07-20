@@ -1,0 +1,61 @@
+{
+    "lab_results":[
+        {
+            "order":"ZB01439/2024/1",
+            "nazwa":"Wał 123456789",
+            "indeks":"W01234",
+            "numer":"ZP01234/2024",
+            "obrabiarka":"Piec indukcyjny 627/P",
+            "nazwa_op":"Hartowanie indukcyjne",
+            "numer_op":"30",
+            "bufor":"715",
+            "code":"ZP",
+            "numer_zp":"ZP01234/2024",
+            "operator": "Piórkowski",
+            "test_result":"Zgodny"
+        },        
+        {
+            "order":"ZB23439/2024/2",
+            "nazwa":"Wał 121239",
+            "indeks":"W03334",
+            "numer":"ZP04434/2024",
+            "obrabiarka":"Piec indukcyjny 255/P",
+            "nazwa_op":"Hartowanie indukcyjne",
+            "numer_op":"10",
+            "bufor":"5",
+            "code":"ZP",
+            "numer_zp":"ZP01334/2024",
+            "operator": "Kowalski",
+            "test_result":"Niezgodny"
+        },        
+        {
+            "order":"ZB04422/2024/2",
+            "nazwa":"Wałek 456789",
+            "indeks":"W05634",
+            "numer":"ZP01234/2024",
+            "obrabiarka":"Piec indukcyjny 627/P",
+            "nazwa_op":"Hartowanie indukcyjne",
+            "numer_op":"10",
+            "bufor":"-5",
+            "code":"ZP",
+            "numer_zp":"ZP01234/2024",
+            "operator": "Piórkowski",
+            "test_result":"Zgodny"
+        },        
+        {
+            "order":"ZB01222/2024/1",
+            "nazwa":"Sworzeń 123456789",
+            "indeks":"W09934",
+            "numer":"ZP01839/2024",
+            "obrabiarka":"Piec indukcyjny 627/P",
+            "nazwa_op":"Spawanie",
+            "numer_op":"60",
+            "bufor":"5",
+            "code":"ZP",
+            "numer_zp":"ZP01234/2024",
+            "operator": "Piórkowski",
+            "test_result":"Zgodny"
+        }
+
+    ]
+    }

@@ -12,6 +12,7 @@ import barcode from "../images/barcode.svg";
 import results_ico from "../images/results.svg";
 
 import data from "../JSON/lab.json";
+import data_results from "../JSON/lab_results.json";
 import data_kategorie from "../JSON/kategorie.json";
 import { number } from "prop-types";
 
@@ -131,8 +132,42 @@ export const Lab = ({ token }) => {
           )}
           {results && (
             <>
+            {/* Modal: Wyniki próbkowania */}
               <div className={styles.results}>
                 <p className={styles.results_Title}>Wyniki</p>
+                <p className={styles.results_subTitle}>Lista ostatnich 10 wyników badań.</p>
+              <div className={styles.results_table}>
+                  {data_results.lab_results.map(({
+                    order,
+                    nazwa,
+                    indeks,
+                    numer,
+                    obrabiarka,
+                    nazwa_op,
+                    numer_op,
+                    operator,
+                    test_result
+                  })=>{return(
+                      <ul className={styles.results_lista}>
+                        <li className={styles.results_lista_el}>
+                          <p className={styles.results_tittle}>Numer zlecenia:</p>
+                          <p className={styles.results_value}>{order}</p>
+                        </li>
+                        <li className={styles.results_lista_el}>
+                          <p className={styles.results_tittle}>Nazwa:</p>
+                          <p className={styles.results_value}>{nazwa}</p>
+                        </li>
+                        <li className={styles.results_lista_el}>
+                          <p className={styles.results_tittle}>Indeks:</p>
+                          <p className={styles.results_value}>{indeks}</p>
+                        </li>
+                        <li className={styles.results_lista_el}>
+                          <p className={styles.results_tittle}>Numer Badania:</p>
+                          <p className={styles.results_value}>{numer}</p>
+                        </li>
+                      </ul>
+                  )})}
+              </div>
               </div>
               <div
                 onClick={() => {
