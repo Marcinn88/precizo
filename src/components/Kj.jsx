@@ -25,9 +25,7 @@ export const Kj = ({ token }) => {
         <Link to="/precizo/kj/circles/">
           <MenuEl key={nanoid()} obraz={circles} nazwa="Kółkowanie" />
         </Link>
-        <Link to="/precizo/kj/circles/">
-          <MenuEl key={nanoid()} obraz={circles} nazwa="Kółkowanie" />
-        </Link>
+
       </div>
     </>
   );
