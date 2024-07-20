@@ -6,7 +6,20 @@
             "index":"W05145",
             "code":"ZP",
             "name":"Wał HXE 811234",
-            "status":"W trakcie"
+            "status":"W trakcie",
+            "wariant":"1",
+            "podwersja":"Podstawowa [5]",
+            "numer_zp":"ZP01234/2024",
+            "status_zp":"W trakcie oczekiwania na próbkę",
+            "obrabiarka":"Piec indukcyjny 627/P",
+            "nazwa_op":"Hartowanie indukcyjne",
+            "numer_op":"40",
+            "ilosc":"150",
+            "pracochlonnosc_h":"8h 15min",
+            "bufor":"715",
+            "zgl_do_zdps": false,
+            "ISIR_required": true,
+            "operator": "Piórkowski"
         },
         {
             "queue":"2",
@@ -14,7 +27,20 @@
             "index":"W02345",
             "code":"ZP",
             "name":"Wał 6-kąt 0222022",
-            "status":"Kolejka"
+            "status":"Kolejka",
+            "wariant":"1",
+            "podwersja":"Podstawowa [5]",
+            "numer_zp":"ZP01234/2024",
+            "status_zp":"W trakcie oczekiwania na próbkę",
+            "obrabiarka":"Piec indukcyjny 627/P",
+            "nazwa_op":"Hartowanie indukcyjne",
+            "numer_op":"40",
+            "ilosc":"150",
+            "pracochlonnosc_h":"8h 15min",
+            "bufor":"715",
+            "zgl_do_zdps": false,
+            "ISIR_required": true,
+            "operator": "Piórkowski"
         },
         {
             "queue":"3",
@@ -22,7 +48,20 @@
             "index":"W05866",
             "code":"ZP",
             "name":"Półoś CC182234",
-            "status":"Kolejka"
+            "status":"Kolejka",
+            "wariant":"1",
+            "podwersja":"Podstawowa [2]",
+            "numer_zp":"ZP01234/2024",
+            "status_zp":"W trakcie oczekiwania na próbkę",
+            "obrabiarka":"Piec indukcyjny 255",
+            "nazwa_op":"Hartowanie indukcyjne",
+            "numer_op":"140",
+            "ilosc":"20",
+            "pracochlonnosc_h":"1h 05min",
+            "bufor":"715",
+            "zgl_do_zdps": false,
+            "ISIR_required": true,
+            "operator": "Piórkowski"
         },
         {
             "queue":"4",
@@ -30,7 +69,20 @@
             "index":"W07654",
             "code":"ZP",
             "name":"Sworzeń 12323234",
-            "status":"Kolejka"
+            "status":"Kolejka",
+            "wariant":"1",
+            "podwersja":"Podstawowa [1]",
+            "numer_zp":"ZP01234/2024",
+            "status_zp":"W trakcie oczekiwania na próbkę",
+            "obrabiarka":"Piec indukcyjny SAET",
+            "nazwa_op":"Hartowanie indukcyjne",
+            "numer_op":"20",
+            "ilosc":"900",
+            "pracochlonnosc_h":"24h 18min",
+            "bufor":"715",
+            "zgl_do_zdps": false,
+            "ISIR_required": true,
+            "operator": "Piórkowski"
         },
         {
             "queue":"5",
@@ -38,7 +90,20 @@
             "index":"W01932",
             "code":"ZP",
             "name":"Wałek ABC 1234343",
-            "status":"Kolejka"
+            "status":"Kolejka",
+            "wariant":"1",
+            "podwersja":"Podstawowa [6]",
+            "numer_zp":"ZP01234/2024",
+            "status_zp":"W trakcie oczekiwania na próbkę",
+            "obrabiarka":"Piec indukcyjny 627/P",
+            "nazwa_op":"Hartowanie indukcyjne",
+            "numer_op":"40",
+            "ilosc":"100",
+            "pracochlonnosc_h":"2h 25min",
+            "bufor":"715",
+            "zgl_do_zdps": false,
+            "ISIR_required": false,
+            "operator": "Piórkowski"
         }
     ]
     }

@@ -180,7 +180,27 @@ export const Lab = ({ token }) => {
                   <li className={styles.el_header_status}>Status</li>
                 </ul>
               </li>
-              {data.lab.map(({ queue, order, index, code, name, status }) => {
+              {data.lab.map(({ 
+              queue, 
+              order, 
+              index, 
+              code, 
+              name, 
+              status, 
+              wariant, 
+              podwersja, 
+              numer_zp, 
+              status_zp, 
+              obrabiarka,
+              nazwa_op, 
+              numer_op, 
+              ilosc, 
+              pracochlonnosc_h, 
+              bufor, 
+              zgl_do_zdps, 
+              ISIR_required, 
+              operator
+            }) => {
                 return (
                   <li className={styles.Lab_rowC} id={order}>
                     {extended === order ? (
@@ -199,11 +219,58 @@ export const Lab = ({ token }) => {
                           <li className={styles.el_status}>{status}</li>
                         </ul>
                         <div className={styles.Lab_rowInfo}>
-                          <p>
-                            Tu pojawi się więcej informacji o zleceniu {order}
-                          </p>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Wariant:</p>
+                              <p className={styles.Lab_order_infoValue}>{wariant}</p>
+                          </div>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Podwersja:</p>
+                              <p className={styles.Lab_order_infoValue}>{podwersja}</p>
+                          </div>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Numer zlecenia:</p>
+                              <p className={styles.Lab_order_infoValue}>{numer_zp}</p>
+                          </div>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Status Zlecenia:</p>
+                              <p className={styles.Lab_order_infoValue}>{status_zp}</p>
+                          </div>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Obrabiarka:</p>
+                              <p className={styles.Lab_order_infoValue}>{obrabiarka}</p>
+                          </div>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Operacja:</p>
+                              <p className={styles.Lab_order_infoValue}>{numer_op} - {nazwa_op}</p>
+                          </div>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Ilość:</p>
+                              <p className={styles.Lab_order_infoValue}>{ilosc}</p>
+                          </div>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Pracochłonność</p>
+                              <p className={styles.Lab_order_infoValue}>{pracochlonnosc_h}</p>
+                          </div>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Bufor:</p>
+                              <p className={styles.Lab_order_infoValue}>{bufor}</p>
+                          </div>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Zgłoszone do ZDPS</p>
+                              <p className={styles.Lab_order_infoValue}>{zgl_do_zdps?"Tak":"Nie"}</p>
+                          </div>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Protokół pomiarowy:</p>
+                              {ISIR_required?
+                              <p className={styles.Lab_order_infoValue_red}>Tak</p>:
+                              <p className={styles.Lab_order_infoValue}>Nie</p>}
+                          </div>
+                          <div className={styles.Lab_rowInfo_el}>
+                              <p className={styles.Lab_order_infoTitle}>Operator:</p>
+                              <p className={styles.Lab_order_infoValue}>{operator}</p>
+                          </div>
+                          </div>
                         </div>
-                      </div>
                     ) : (
                       <ul
                         className={styles.Lab_row}
