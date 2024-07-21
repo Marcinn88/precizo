@@ -39,7 +39,7 @@
             "bufor":"-5",
             "code":"ZP",
             "numer_zp":"ZP01234/2024",
-            "operator": "Piórkowski",
+            "operator": "Nowak",
             "test_result":"Zgodny"
         },        
         {
@@ -55,6 +55,34 @@
             "numer_zp":"ZP01234/2024",
             "operator": "Piórkowski",
             "test_result":"Zgodny"
+        },       
+        {
+            "order":"ZB01322/2024/1",
+            "nazwa":"Wał XX12312",
+            "indeks":"",
+            "numer":"",
+            "obrabiarka":"",
+            "nazwa_op":"",
+            "numer_op":"",
+            "bufor":"",
+            "code":"KJ",
+            "numer_zp":"",
+            "operator": "",
+            "test_result":"Zgodny"
+        },        
+        {
+            "order":"ZB01422/2024/4",
+            "nazwa":"Sworzeń ABC321",
+            "indeks":"W05555",
+            "numer":"ZP01839/2024",
+            "obrabiarka":"Piec indukcyjny 627/P",
+            "nazwa_op":"Hartowanie indukcyjne",
+            "numer_op":"20",
+            "bufor":"-5",
+            "code":"ZP",
+            "numer_zp":"ZP04567/2024",
+            "operator": "Czerwony",
+            "test_result":"Dopuszczony"
         }
 
     ]
