@@ -30,7 +30,7 @@ export const Lab = ({ token }) => {
 
   const submitNewOrder = (e) => {
     e.preventDefault();
-    console.log(order);
+    // console.log(order);
     setNewTest(false);
   };
 
@@ -414,7 +414,7 @@ export const Lab = ({ token }) => {
                             </div>
                             <div className={styles.Lab_rowInfo_el}>
                               <p className={styles.Lab_order_infoTitle}>
-                                Protokół pomiarowy:
+                                Sprawozdanie:
                               </p>
                               {ISIR_required ? (
                                 <p className={styles.Lab_order_infoValue_red}>
