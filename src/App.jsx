@@ -8,6 +8,7 @@ import { Circles } from "./components/Circles";
 import { Kj } from "./components/Kj";
 import { PSW } from "./components/PSW";
 import { PSWmanual } from "./components/PSWmanual";
+import { MT } from "./components/MT";
 
 const App = () => {
   // console.log("server uruchomiony");
@@ -44,6 +45,7 @@ const App = () => {
           path="/precizo/kj/circles"
           element={<Circles token={tokenChecker()} />}
         />
+        <Route path="/precizo/kj/mt" element={<MT token={tokenChecker()} />} />
         <Route
           path="/precizo/kj/psw-auto"
           element={<PSW token={tokenChecker()} />}

@@ -7,6 +7,7 @@ import { nanoid } from "nanoid";
 import document from "../images/document.svg";
 import results from "../images/results.svg";
 import circles from "../images/circles.svg";
+import lamp from "../images/lamp.svg";
 
 export const Kj = ({ token }) => {
   return (
@@ -25,7 +26,9 @@ export const Kj = ({ token }) => {
         <Link to="/precizo/kj/circles/">
           <MenuEl key={nanoid()} obraz={circles} nazwa="Kółkowanie" />
         </Link>
-
+        <Link to="/precizo/kj/mt/">
+          <MenuEl key={nanoid()} obraz={lamp} nazwa="MT App" />
+        </Link>
       </div>
     </>
   );

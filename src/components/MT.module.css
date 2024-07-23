@@ -1,0 +1,101 @@
+.Camera_container{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Camera{
+    background-color: rgb(124, 124, 124);
+    width: 100%;
+    margin: 20px 0;
+    min-height: 65%;
+}
+
+
+.CameraBtns{
+    display: flex;
+    justify-content: center;
+    gap:20%;
+}
+.CameraEl_wrapper{
+    background-color: #1c1c1a;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Oswald;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    width: 130px;
+    height: 130px;
+    margin: 15px;
+    font-size: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.CameraEl_wrapper:hover{
+    border: 1px solid rgb(255, 255, 255);
+}
+.CameraEl_img{
+    width: 60px;
+    height: 60px;
+    margin: 0;
+}
+
+.CameraEl_title,
+.Camera_SummaryBtn_title{
+    margin: 0;
+}
+.SummaryBtn_wrapper{
+    background-color: #1c1c1a;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Oswald;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    width: 290px;
+    height: 80px;
+    margin: 15px;
+    font-size: 20px;    
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.SummaryBtn_wrapper:hover{
+border: 1px solid rgb(255, 255, 255);
+}
+
+  @media screen and (max-width: 410px) {
+    .CameraEl_wrapper{
+        width: 120px;
+        height: 120px;
+        margin: 5px;
+    }
+    .SummaryBtn_wrapper{
+        width: 250px;
+        height: 70px;
+        font-size: 20px;
+    }
+  }  
+  @media screen and (max-width: 350px) {
+    .CameraEl_wrapper{
+        width: 90px;
+        height: 90px;
+        margin: 5px;
+        font-size: 15px;
+    }    
+    .SummaryBtn_wrapper{
+        width: 190px;
+        height: 60px;
+        font-size: 15px;
+    }
+    .CameraEl_img{
+        width: 50px;
+        height: 50px;
+        margin: 0;
+    }
+  }
