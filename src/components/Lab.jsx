@@ -414,7 +414,7 @@ export const Lab = ({ token }) => {
                             </div>
                             <div className={styles.Lab_rowInfo_el}>
                               <p className={styles.Lab_order_infoTitle}>
-                                Sprawozdanie:
+                                Sprawozdanie ISIR:
                               </p>
                               {ISIR_required ? (
                                 <p className={styles.Lab_order_infoValue_red}>
