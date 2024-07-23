@@ -15,8 +15,8 @@ export const MT = ({ token }) => {
     navigator.mediaDevices
       .getUserMedia({
         video: {
-          width: { ideal: 300 },
-          height: { ideal: 300 },
+          width: screen.width,
+          height: screen.height,
           facingMode: { exact: "environment" },
         },
       })
