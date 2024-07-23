@@ -9,9 +9,9 @@
 
 .Camera{
     background-color: rgb(0, 0, 0);
-    width: 100%;
+    width: 95vw;
     margin: 20px 0;
-    min-height: 65%;
+    height: 65%;
 }
 
 
