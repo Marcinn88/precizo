@@ -45,7 +45,7 @@ export const MT = ({ token }) => {
           <Nav />
           <div className={styles.Camera_container}>
             <div className={styles.Camera}>
-              <video className={styles.camera} ref={videoRef}></video>
+              <video className={styles.Video} ref={videoRef}></video>
             </div>
             <div className={styles.CameraBtns}>
               <div className={styles.CameraEl_wrapper}>

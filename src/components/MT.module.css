@@ -16,7 +16,10 @@
     margin: 20px 0;
     height: 65%;
 }
-
+.Video{
+    /* background-color: red; */
+    width: 90%;
+}
 
 .CameraBtns{
     display: flex;
