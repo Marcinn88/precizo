@@ -14,7 +14,11 @@ export const MT = ({ token }) => {
   useEffect(() => {
     navigator.mediaDevices
       .getUserMedia({
-        video: { width: 400, height: 400 },
+        video: {
+          width: { ideal: 1280 },
+          height: { ideal: 720 },
+        },
+        facingMode: { exact: "environment" },
       })
       .then((stream) => {
         let video = videoRef.current;
