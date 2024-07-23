@@ -2,24 +2,37 @@ import styles from "./MT.module.css";
 import { Nav } from "./Nav";
 import { LoginPage } from "./LoginPage";
 import html2canvas from "html2canvas";
-import { useState } from "react";
-import { MenuEl } from "./MenuEl";
-import { nanoid } from "nanoid";
+import { useEffect, useRef, useState } from "react";
 
 import camera_green from "../images/camera_green.svg";
 import camera_red from "../images/camera_red.svg";
 
 export const MT = ({ token }) => {
-  const printImage = () => {
-    const input = document.getElementById("divToPrint");
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const a = document.createElement("a");
-      a.href = imgData;
-      a.download = "Circle.png";
-      a.click();
-    });
-  };
+  const videoRef = useRef(null);
+  const photoRef = useRef();
+
+  useEffect(() => {
+    navigator.mediaDevices
+      .getUserMedia({
+        video: { width: 400, height: 400 },
+      })
+      .then((stream) => {
+        let video = videoRef.current;
+        video.srcObject = stream;
+        video.play();
+      });
+  }, [videoRef]);
+
+  //   const printImage = () => {
+  //     const input = document.getElementById("divToPrint");
+  //     html2canvas(input).then((canvas) => {
+  //       const imgData = canvas.toDataURL("image/png");
+  //       const a = document.createElement("a");
+  //       a.href = imgData;
+  //       a.download = "Circle.png";
+  //       a.click();
+  //     });
+  //   };
 
   return (
     <>
@@ -27,7 +40,9 @@ export const MT = ({ token }) => {
         <>
           <Nav />
           <div className={styles.Camera_container}>
-            <div className={styles.Camera}></div>
+            <div className={styles.Camera}>
+              <video className={styles.camera} ref={videoRef}></video>
+            </div>
             <div className={styles.CameraBtns}>
               <div className={styles.CameraEl_wrapper}>
                 <img
