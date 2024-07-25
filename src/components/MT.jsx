@@ -27,6 +27,14 @@ export const MT = ({ token }) => {
       });
   }, [videoRef]);
 
+  const onGood = () => {
+    console.log("good");
+  };
+
+  const onBad = () => {
+    console.log("bad");
+  };
+
   //   const printImage = () => {
   //     const input = document.getElementById("divToPrint");
   //     html2canvas(input).then((canvas) => {
@@ -48,7 +56,12 @@ export const MT = ({ token }) => {
               <video className={styles.Video} ref={videoRef}></video>
             </div>
             <div className={styles.CameraBtns}>
-              <div className={styles.CameraEl_wrapper}>
+              <div
+                className={styles.CameraEl_wrapper}
+                onClick={() => {
+                  onGood();
+                }}
+              >
                 <img
                   className={styles.CameraEl_img}
                   alt=""
@@ -56,7 +69,12 @@ export const MT = ({ token }) => {
                 />
                 <p className={styles.CameraEl_title}>Zgodny</p>
               </div>
-              <div className={styles.CameraEl_wrapper}>
+              <div
+                className={styles.CameraEl_wrapper}
+                onClick={() => {
+                  onBad();
+                }}
+              >
                 <img className={styles.CameraEl_img} alt="" src={camera_red} />
                 <p className={styles.CameraEl_title}>Niezgodny</p>
               </div>

@@ -13,15 +13,23 @@ export const Translator = ({ token }) => {
       {token === "admin" ? (
         <>
           <Nav />
-          <div>
+          <div className={styles.Translator_wrapper}>
+            <p className={styles.tran_title}>Wpisz dane do tłumaczenia:</p>
             <form
+              className={styles.Translator}
               onSubmit={(e) => {
                 submitTranslate(e);
               }}
             >
-              <input type="text" />
-              <input type="submit" />
+              <textarea className={styles.tran_text} />
+              <input
+                className={styles.tran_btn}
+                value="Tłumacz"
+                type="submit"
+              />
             </form>
+            <p className={styles.tran_title}>Wyniki:</p>
+            <div className={styles.tran_results}></div>
           </div>
         </>
       ) : (
