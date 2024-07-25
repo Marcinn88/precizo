@@ -12,6 +12,8 @@ import chart from "../images/chart.svg";
 import cart from "../images/cart.svg";
 import profile from "../images/profile.svg";
 import inspection from "../images/inspection.svg";
+import translate from "../images/translate.svg";
+
 import { LoginPage } from "./LoginPage";
 
 export const Hero = ({ token }) => {
@@ -46,7 +48,7 @@ export const Hero = ({ token }) => {
               <MenuEl key={nanoid()} obraz={inspection} nazwa="KJ" />
             </Link>
             <Link to="/precizo/translator/">
-              <MenuEl key={nanoid()} obraz={inspection} nazwa="KJ" />
+              <MenuEl key={nanoid()} obraz={translate} nazwa="Tłumacz" />
             </Link>
           </div>
         </>
