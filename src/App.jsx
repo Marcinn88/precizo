@@ -9,6 +9,7 @@ import { Kj } from "./components/Kj";
 import { PSW } from "./components/PSW";
 import { PSWmanual } from "./components/PSWmanual";
 import { MT } from "./components/MT";
+import { Translator } from "./components/Translator";
 
 const App = () => {
   // console.log("server uruchomiony");
@@ -37,6 +38,7 @@ const App = () => {
           element={<Dashboard token={tokenChecker()} />}
         />
         <Route path="/precizo/kj" element={<Kj token={tokenChecker()} />} />
+        <Route path="/precizo/translator" element={<Translator token={tokenChecker()} />} />
         <Route
           path="/precizo/kj/lab"
           element={<Lab token={tokenChecker()} />}
