@@ -38,7 +38,7 @@ export const Translator = ({ token }) => {
       return null;
     }
   }
-
+  
   const submitTranslate = (e) => {
     e.preventDefault();
     console.log("Translation sent...");
