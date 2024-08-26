@@ -131,10 +131,18 @@ export const MT = ({ token }) => {
               <div className={styles.Raport}>
                 <p>Generuj raport badania MT dla zlecenia {order[0].numer}</p> 
                 <div className={styles.Raport_Results}>
-                  <p>Numer: </p>
-                  <p>1</p>
-                  <p>Wynik badania: </p>
-                  <p>OK.</p>
+                  {results.map(({number, result, file}) => {
+                  return (<div className={styles.Raport_Results_Row}>
+                    <input type="checkbox" value={true}/>
+                    <p>No.: </p>
+                    <p>{number}</p>
+                    <p>Wynik badania: </p>
+                    <p>{result}</p>
+                    <p>Zdjęcie: </p>
+                    <p>{file}</p>
+                    </div>
+                  );
+                })}
                 </div>
                 <div className={styles.SummaryBtn_wrapper}
                   onClick={() => {
