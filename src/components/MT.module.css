@@ -111,6 +111,15 @@ border: 1px solid rgb(255, 255, 255);
     display: flex;
     gap: 20px;
 }
+.Table th{
+    /* min-width: 150px; */
+    padding: 5px 20px;
+    background-color: rgb(49, 49, 49);
+}
+.Table td{
+    background-color: rgb(80, 80, 80);
+    padding: 3px;
+}
 
   @media screen and (max-width: 410px) {
     .CameraEl_wrapper{
