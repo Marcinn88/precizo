@@ -18,6 +18,8 @@ export const MT = ({ token }) => {
   const photoRef = useRef();
   const [file, setFile] = useState(null);
   const [results, setResults] = useState([])
+  const [raport, setRaport] = useState(false)
+
 
   useEffect(() => {
     navigator.mediaDevices
@@ -44,19 +46,19 @@ export const MT = ({ token }) => {
 
 
 
-const dateFunction = () => {
-  const fullData = new Date()
-  const year = fullData.getFullYear()
-  const day = trimData(fullData.getDate())
-  const month = trimData(fullData.getMonth()+1)
-  const hours = trimData(fullData.getHours())
-  const minutes = trimData(fullData.getMinutes())
-  const seconds = trimData(fullData.getSeconds())
-  const time = `_${hours}${minutes}${seconds}`
-  const data = `${year}${month}${day}${time}`
-  console.log("year",year, "month", month, "day", day, "time", time)
-  return data
-}
+  const dateFunction = () => {
+    const fullData = new Date()
+    const year = fullData.getFullYear()
+    const day = trimData(fullData.getDate())
+    const month = trimData(fullData.getMonth()+1)
+    const hours = trimData(fullData.getHours())
+    const minutes = trimData(fullData.getMinutes())
+    const seconds = trimData(fullData.getSeconds())
+    const time = `_${hours}${minutes}${seconds}`
+    const data = `${year}${month}${day}${time}`
+    console.log("year",year, "month", month, "day", day, "time", time)
+    return data
+  }
 
   const onGood = () => {
     console.log("OK");
@@ -89,8 +91,9 @@ const dateFunction = () => {
 
   const onGenerate = () => {
     console.log(results)
+    setRaport(true)
   }
-  
+
     // const printImage = () => {
     //   const input = document.getElementById("divToPrint");
     //   html2canvas(input).then((canvas) => {
@@ -108,6 +111,22 @@ const dateFunction = () => {
         <>
           <Nav />
           <div className={styles.Camera_container}>
+            {raport &&
+            <>
+              <div className={styles.Raport_Shadow} onClick={()=>{setRaport(false)}}></div>
+              <div className={styles.Raport}>
+                <p>Generuj raport badania MT dla zlecenia {order[0].numer}</p> 
+                <div className={styles.Raport_Results}>
+                </div>
+                <div className={styles.SummaryBtn_wrapper}
+                  onClick={() => {
+                  alert("Po wciśnięciu zostanie wygenerowany raport");
+                  setRaport(false)
+                  }}>
+                  <p className={styles.SummaryBtn_title}>Generuj</p>
+                </div>
+              </div>
+            </>}
             <div className={styles.Camera} id="divToPrint">
               <video className={styles.Video} ref={videoRef}></video>
             </div>
