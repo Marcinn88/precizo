@@ -1,0 +1,16 @@
+[
+    {
+        "numer":"ZP01234/2024",
+        "nazwa":"Wał 123456789",
+        "indeks":"W01234",
+        "wariant":"1",
+        "podwersja":"Podstawowa [5]",
+        "status":"2-Rozpoczęty",
+        "obrabiarka":"PUMA TT2500",
+        "nazwa_op":"Toczenie",
+        "numer_op":"30",
+        "ilosc":"150",
+        "bufor":"715",
+        "zgl_do_zdps": false
+    }
+]
