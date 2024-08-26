@@ -71,7 +71,6 @@ const dateFunction = () => {
     });
     setResults((results) => [...results, { order: order[0].numer, name: order[0].nazwa, result: "OK", file: "OK_"+dateFunction()}
     ]);
-    console.log(results)
   };
 
   const onBad = () => {
@@ -86,23 +85,22 @@ const dateFunction = () => {
     });
       setResults((results) => [...results, { order: order[0].numer, name: order[0].nazwa, result: "NOK", file: "NOK_"+dateFunction()}
     ]);
-    console.log(results)
   };
 
   const onGenerate = () => {
     console.log(results)
   }
-
-    const printImage = () => {
-      const input = document.getElementById("divToPrint");
-      html2canvas(input).then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-        const a = document.createElement("a");
-        a.href = imgData;
-        a.download = "Circle.png";
-        a.click();
-      });
-    };
+  
+    // const printImage = () => {
+    //   const input = document.getElementById("divToPrint");
+    //   html2canvas(input).then((canvas) => {
+    //     const imgData = canvas.toDataURL("image/png");
+    //     const a = document.createElement("a");
+    //     a.href = imgData;
+    //     a.download = "Circle.png";
+    //     a.click();
+    //   });
+    // };
 
   return (
     <>
