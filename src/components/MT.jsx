@@ -19,6 +19,8 @@ export const MT = ({ token }) => {
   const [file, setFile] = useState(null);
   const [results, setResults] = useState([])
   const [raport, setRaport] = useState(false)
+  const [number, setNumber] = useState(1)
+
 
 
   useEffect(() => {
@@ -71,8 +73,14 @@ export const MT = ({ token }) => {
       a.download = `OK_${dateFunction()}`;
       a.click();
     });
-    setResults((results) => [...results, { order: order[0].numer, name: order[0].nazwa, result: "OK", file: "OK_"+dateFunction()}
+    setResults((results) => [...results, { 
+      number: number,
+      order: order[0].numer, 
+      name: order[0].nazwa, 
+      result: "OK", 
+      file: "OK_"+dateFunction()}
     ]);
+    setNumber(number+1)
   };
 
   const onBad = () => {
@@ -85,8 +93,14 @@ export const MT = ({ token }) => {
       a.download = `NOK_${dateFunction()}`;
       a.click();
     });
-      setResults((results) => [...results, { order: order[0].numer, name: order[0].nazwa, result: "NOK", file: "NOK_"+dateFunction()}
+    setResults((results) => [...results, { 
+      number: number,
+      order: order[0].numer, 
+      name: order[0].nazwa, 
+      result: "NOK", 
+      file: "NOK_"+dateFunction()}
     ]);
+    setNumber(number+1)
   };
 
   const onGenerate = () => {
@@ -117,6 +131,10 @@ export const MT = ({ token }) => {
               <div className={styles.Raport}>
                 <p>Generuj raport badania MT dla zlecenia {order[0].numer}</p> 
                 <div className={styles.Raport_Results}>
+                  <p>Numer: </p>
+                  <p>1</p>
+                  <p>Wynik badania: </p>
+                  <p>OK.</p>
                 </div>
                 <div className={styles.SummaryBtn_wrapper}
                   onClick={() => {
