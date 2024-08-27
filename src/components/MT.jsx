@@ -143,6 +143,7 @@ export const MT = ({ token }) => {
       worksheet.getCell(`D1${number}`).value = result;
       worksheet.getCell(`E1${number}`).value = operator;
       worksheet.getCell(`F1${number}`).value = file;
+      // worksheet.getCell(`F1${number}`).value = { formula: 'SUM(A1:A10)'};
     });
 
     const buffer = await workbook.xlsx.writeBuffer();
