@@ -130,8 +130,8 @@ export const MT = ({ token }) => {
   };
 
   const handleFileUpload = async () => {
-    const total = Object.keys(results);
-    console.log(results);
+    // const total = Object.keys(results);
+    // console.log(results);
     const workbook = new ExcelJS.Workbook();
     await workbook.xlsx.load(file);
     const worksheet = workbook.getWorksheet(1);
@@ -157,16 +157,6 @@ export const MT = ({ token }) => {
     setRaport(false);
     handleFileUpload();
   };
-  // const printImage = () => {
-  //   const input = document.getElementById("divToPrint");
-  //   html2canvas(input).then((canvas) => {
-  //     const imgData = canvas.toDataURL("image/png");
-  //     const a = document.createElement("a");
-  //     a.href = imgData;
-  //     a.download = "Circle.png";
-  //     a.click();
-  //   });
-  // };
 
   return (
     <>
@@ -218,7 +208,6 @@ export const MT = ({ token }) => {
                   <div
                     className={styles.SummaryBtn_wrapper}
                     onClick={() => {
-                      alert("Po wciśnięciu zostanie wygenerowany raport");
                       onGenerate();
                     }}
                   >

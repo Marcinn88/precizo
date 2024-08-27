@@ -29,7 +29,6 @@
 .CameraEl_wrapper{
     background-color: #1c1c1a;
     border-radius: 10px;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
