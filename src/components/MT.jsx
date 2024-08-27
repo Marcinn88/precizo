@@ -10,9 +10,7 @@ import { saveAs } from "file-saver";
 import camera_green from "../images/camera_green.svg";
 import camera_red from "../images/camera_red.svg";
 import order from "../JSON/order.json";
-// import MTreport from "../Excel/MT.xlsx";
-
-// console.log(order)
+import { nanoid } from "nanoid";
 
 export const MT = ({ token }) => {
   const videoRef = useRef(null);
@@ -130,9 +128,10 @@ export const MT = ({ token }) => {
   };
 
   const handleFileUpload = async () => {
-    // const total = Object.keys(results);
-    // console.log(results);
+
     const workbook = new ExcelJS.Workbook();
+
+
     await workbook.xlsx.load(file);
     const worksheet = workbook.getWorksheet(1);
     worksheet.getCell(`D5`).value = order[0].nazwa;
@@ -182,6 +181,7 @@ export const MT = ({ token }) => {
                   <div className={styles.Raport_Results}>
                     <div className={styles.Raport_Results_Row}>
                       <table className={styles.Table}>
+                        <thead>
                         <tr>
                           <th>
                             <input type="checkbox" />
@@ -189,10 +189,11 @@ export const MT = ({ token }) => {
                           <th>Numer</th>
                           <th>Wyniki badania</th>
                           <th>Zdjęcie</th>
-                        </tr>
+                        </tr></thead>
+                        <tbody>
                         {results.map(({ number, result, file }) => {
                           return (
-                            <tr>
+                            <tr key={nanoid()}>
                               <td>
                                 <input type="checkbox" />
                               </td>
@@ -202,6 +203,7 @@ export const MT = ({ token }) => {
                             </tr>
                           );
                         })}
+                        </tbody>
                       </table>
                     </div>
                   </div>
