@@ -1,0 +1,39 @@
+
+.Machines_wrapper{
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;    
+}
+
+.Machines_El{
+    width: 180px;
+    height: 250px;
+    background-color: rgb(48, 48, 48);
+    border: 1px solid rgb(65, 65, 65);
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.Machine_line{
+    display: flex;
+    gap: 5px;
+    padding: 0 5px;
+}
+
+.Machine_title{
+    padding: 0;
+    margin: 0;
+    font-family: Oswald;
+    font-size: 13px;
+    width: 80px;
+}
+.Machine_value{
+    padding: 0;
+    margin: 0;
+    font-family: Oswald;
+    font-size: 15px;
+    width: 100px;
+}
