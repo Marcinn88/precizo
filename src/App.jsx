@@ -58,10 +58,10 @@ const App = () => {
           path="/precizo/kj/psw-manual"
           element={<PSWmanual token={tokenChecker()} />}
         />
-        <Route
+        {/* <Route
           path="/precizo/scout/machines"
           element={<MachineOnline token={tokenChecker()} />}
-        />
+        /> */}
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Route>
         <Route path="/precizo/scout" element={<Scout token={tokenChecker()} />} />
