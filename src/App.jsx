@@ -40,7 +40,10 @@ const App = () => {
           element={<Dashboard token={tokenChecker()} />}
         />
         <Route path="/precizo/kj" element={<Kj token={tokenChecker()} />} />
-        <Route path="/precizo/translator" element={<Translator token={tokenChecker()} />} />
+        <Route
+          path="/precizo/translator"
+          element={<Translator token={tokenChecker()} />}
+        />
         <Route
           path="/precizo/kj/lab"
           element={<Lab token={tokenChecker()} />}
@@ -64,7 +67,7 @@ const App = () => {
         />
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Route>
-        <Route path="/precizo/scout" element={<Scout token={tokenChecker()} />} />
+      <Route path="/precizo/scout" element={<Scout token={tokenChecker()} />} />
     </Routes>
   );
 };

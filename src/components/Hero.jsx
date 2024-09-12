@@ -13,7 +13,7 @@ import cart from "../images/cart.svg";
 import profile from "../images/profile.svg";
 import inspection from "../images/inspection.svg";
 import translate from "../images/translate.svg";
-import computer from "../images/computer_work.svg"
+import computer from "../images/computer_work.svg";
 
 import { LoginPage } from "./LoginPage";
 

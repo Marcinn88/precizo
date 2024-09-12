@@ -4,7 +4,7 @@ import { MenuEl } from "./MenuEl";
 import styles from "./Scout.module.css";
 import { nanoid } from "nanoid";
 
-import cnc_machine from "../images/machine-cnc.svg"
+import cnc_machine from "../images/machine-cnc.svg";
 
 export const Scout = ({ token }) => {
   return (
