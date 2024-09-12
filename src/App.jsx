@@ -11,7 +11,7 @@ import { PSWmanual } from "./components/PSWmanual";
 import { MT } from "./components/MT";
 import { Translator } from "./components/Translator";
 import { Scout } from "./components/Scout";
-import { MachineOnline } from "./components/MachineOnline";
+// import { MachineOnline } from "./components/MachineOnline";
 
 const App = () => {
   // console.log("server uruchomiony");
@@ -58,7 +58,10 @@ const App = () => {
           path="/precizo/kj/psw-manual"
           element={<PSWmanual token={tokenChecker()} />}
         />
-
+        {/* <Route
+          path="/precizo/scout/machines"
+          element={<MachineOnline token={tokenChecker()} />}
+        /> */}
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Route>
         <Route path="/precizo/scout" element={<Scout token={tokenChecker()} />} />
