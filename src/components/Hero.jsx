@@ -51,9 +51,9 @@ export const Hero = ({ token }) => {
             <Link to="/precizo/translator/">
               <MenuEl key={nanoid()} obraz={translate} nazwa="Tłumacz" />
             </Link>
-            {/* <Link to="/precizo/scout/">
+            <Link to="/precizo/scout/">
               <MenuEl key={nanoid()} obraz={computer} nazwa="Scout" />
-            </Link> */}
+            </Link>
           </div>
         </>
       ) : (

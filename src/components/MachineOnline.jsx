@@ -4,6 +4,7 @@ import React from "react";
 
 
 import data from "../JSON/ScoutAPI_machines_Online.json";
+import { nanoid } from "nanoid";
 
 const dane = data.data;
 
@@ -33,7 +34,7 @@ export const MachineOnline = ({ token }) => {
                 total_quantity
         })=>{
                 return(
-                    <div className={styles.Machines_El}>
+                    <div className={styles.Machines_El} key={nanoid()}>
                         <div className={styles.Machine_line}>
                             <p className={styles.Machine_title}> Indeks: </p>
                             <p className={styles.Machine_value}> {machine_number} </p>
