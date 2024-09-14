@@ -8,32 +8,157 @@
     box-sizing: border-box;    
 }
 
-.Machines_El{
+.Machines_El,
+.Machines_El_ppp,
+.Machines_El_zdps,
+.Machines_El_rew,
+.Machines_El_nadzor{
     width: 180px;
-    height: 250px;
-    background-color: rgb(48, 48, 48);
-    border: 1px solid rgb(65, 65, 65);
-    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
     margin: 5px;
+    -webkit-box-shadow: 9px 11px 9px -9px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 9px 11px 9px -9px rgba(0, 0, 0, 1);
+    box-shadow: 9px 11px 9px -9px rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    cursor: pointer;
 }
 
-.Machine_line{
+    .Machines_El{
+        background: linear-gradient(0deg, rgb(116, 116, 116) 0%, rgb(223, 223, 223) 100%);
+    }
+    .Machines_El:hover{
+        background: linear-gradient(0deg, rgb(160, 160, 160) 0%, rgb(255, 255, 255) 100%);
+    }
+    .Machines_El_ppp{
+        background: linear-gradient(0deg, rgb(191, 204, 71) 0%, rgb(251, 255, 208) 100%);
+    }
+    .Machines_El_ppp:hover{
+        background: linear-gradient(0deg, rgb(243, 255, 135) 0%, rgb(252, 255, 225) 100%);
+    }
+    .Machines_El_zdps{
+        background: linear-gradient(0deg, rgb(116, 116, 116) 0%, rgb(223, 223, 223) 100%);
+        /* background: linear-gradient(0deg, rgb(255, 226, 61) 0%, rgb(175, 175, 175) 10%, rgb(255, 255, 255) 100%); */
+    }
+    .Machines_El_zdps:hover{
+        background: linear-gradient(0deg, rgb(160, 160, 160) 0%, rgb(255, 255, 255) 100%);
+        /* background: linear-gradient(0deg, rgb(255, 226, 61) 0%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 100%); */
+    }
+    .Machines_El_rew{
+        background: linear-gradient(0deg, rgb(86, 143, 67) 0%, rgb(146, 194, 137) 100%);
+    }
+    .Machines_El_rew:hover{
+        background: linear-gradient(0deg, rgb(123, 209, 94) 0%, rgb(174, 207, 168) 100%);
+    }
+    .Machines_El_nadzor{
+        background: linear-gradient(0deg, rgb(178, 85, 27) 0%, rgb(228, 191, 137) 100%);
+    }
+    .Machines_El_nadzor:hover{
+        background: linear-gradient(0deg, rgb(239, 129, 61) 0%, rgb(212, 189, 153) 100%);
+    }
+
+.Machine_img_container{
     display: flex;
-    gap: 5px;
+    gap:5px;
+    width: 60px;
+    height: 25px;
+}
+.Machine_header{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #292929;
+    width: 180px;
+    border-radius: 10px 10px 0 0;
+    border: solid 1px black;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.Machine_body{
+    height: 170px;
+}
+
+.Machine_line,
+.Machine_line_op,
+.Machine_main_line{
+    display: flex;
     padding: 0 5px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.Machine_line_op{
+    height: 50px;
+}
+.Machine_main_line{
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+.Machine_ico{
+    width: 25px;
 }
 
 .Machine_title{
+    padding: 0 5px;
+    margin: 0 2px;
+    font-family: Oswald;
+    font-size: 13px;
+    width: 60px;
+    text-align: right;
+    color: black;
+    /* background-color: brown; */
+}
+.Machine_value{
+    padding: 0 5px;
+    margin: 0 2px;
+    font-family: Oswald;
+    font-size: 15px;
+    width: 95px;
+    color:black;
+    /* background-color: darkblue; */
+}
+
+.Machine_value_main{
     padding: 0;
     margin: 0;
     font-family: Oswald;
-    font-size: 13px;
-    width: 80px;
+    font-size: 30px;
 }
-.Machine_value{
+
+.Machine_value_submain{
     padding: 0;
     margin: 0;
     font-family: Oswald;
     font-size: 15px;
-    width: 100px;
+    font-weight: 300;
+}
+
+.Machine_order{
+    padding: 0;
+    margin: 0;
+    font-family: Oswald;
+    font-size: 25px;
+    color:black;
+}
+
+.Machine_counter{
+    padding: 0;
+    margin: 0;
+    font-family: Oswald;
+    font-size: 30px;
+    color:black;
+    font-weight: 600;
 }
