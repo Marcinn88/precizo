@@ -200,6 +200,7 @@
     width: 30px;
     fill: white;
     stroke: white;
+    user-select: none;
 }
 .Machine_filterTitle{
     margin: 0;
@@ -208,6 +209,7 @@
     font-size: 15px;
     color:white;
     font-weight: 400;
+    user-select: none;
 }
 .Filter_scrollMenu{
     position: absolute;
@@ -223,6 +225,7 @@
     align-items: center;
     border-radius: 10px;
     padding: 5px 0;
+    user-select: none;
 }
 .Filter_scrollMenu_EL{
     padding: 10px 0;
@@ -235,6 +238,7 @@
     text-align: center;
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
+    user-select: none;
 }
 .Filter_scrollMenu_EL:hover{
 background-color: rgb(83, 83, 83);
