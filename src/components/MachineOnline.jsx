@@ -1,16 +1,31 @@
 import { Nav } from "./Nav";
 import styles from "./MachineOnline.module.css";
-import React from "react";
-
+import 'react-notifications/lib/notifications.css';
+import React, { useState } from "react";
 
 import data from "../JSON/ScoutAPI_machines_Online.json";
 import { nanoid } from "nanoid";
+
 import runner from "../images/runner.svg"
 import status from "../images/status.svg"
+import area from "../images/area.svg"
+import sort from "../images/sort.svg"
 
 const dane = data.data;
 
 export const MachineOnline = ({ token }) => {
+
+    const [scrollMenu, setScrollMenu] = useState()
+
+    const closeScrollMenu = () => {
+        setScrollMenu(false)
+        console.log("close menu")
+    }
+
+    const openScrollMenu = () => {
+        setScrollMenu(true)
+        console.log("open menu")
+    }
 
     const onOpenSite = () =>{
         console.log("dane",dane)
@@ -18,7 +33,7 @@ export const MachineOnline = ({ token }) => {
     onOpenSite()
 
     const timeChanger = (total_time) => {
-        var sec_num = parseInt(total_time, 10); // don't forget the second param
+        var sec_num = parseInt(total_time, 10);
         var hours   = Math.floor(sec_num / 3600);
         var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
         var seconds = sec_num - (hours * 3600) - (minutes * 60);
@@ -44,6 +59,46 @@ export const MachineOnline = ({ token }) => {
   return (
     <>
       <Nav />
+      <div className={styles.Machines_FilterWrapper}>
+            {scrollMenu && 
+                <div className={styles.Filter_scrollMenu_Shadow}
+                    onClick={closeScrollMenu}>
+                </div>}
+            <div  className={styles.Machines_FilterEl} onClick={openScrollMenu}>
+                <img className={styles.Machine_filterIco} src={area} alt=""></img>
+                <p className={styles.Machine_filterTitle}>
+                    Obszar
+                </p>
+                {scrollMenu && 
+                    <div className={styles.Filter_scrollMenu}>
+                        <p className={styles.Filter_scrollMenu_EL}>
+                            1
+                        </p>
+                        <p className={styles.Filter_scrollMenu_EL}>
+                            2
+                        </p>
+                        <p className={styles.Filter_scrollMenu_EL}>
+                            3
+                        </p>
+                        <p className={styles.Filter_scrollMenu_EL}>
+                            4
+                        </p>
+                        <p className={styles.Filter_scrollMenu_EL}>
+                            5
+                        </p>
+                        <p className={styles.Filter_scrollMenu_EL}>
+                            6
+                        </p>
+                    </div>
+                }
+            </div>
+            <div  className={styles.Machines_FilterEl}>
+                <img className={styles.Machine_filterIco} src={sort} alt=""></img>
+                <p className={styles.Machine_filterTitle}>
+                    Sortuj
+                </p>
+            </div>
+        </div>
       <div className={styles.Machines_wrapper}>
             {dane.sort((a, b) => endTime(a.order_tj, a.counter, a.total_quantity) - endTime(b.order_tj, b.counter, b.total_quantity))
 
@@ -98,7 +153,6 @@ export const MachineOnline = ({ token }) => {
                             </div>
                             <div className={styles.Machine_line}>
                                 <p className={styles.Machine_title}> Plan. koniec: </p>
-                                {/* <p className={styles.Machine_value}> {endTime(100, 10, 50)} </p> */}
                                 <p className={styles.Machine_value}> {timeChanger(endTime(order_tj, counter, total_quantity))} </p>
                             </div>
                             <div className={styles.Machine_line}>
@@ -113,6 +167,7 @@ export const MachineOnline = ({ token }) => {
                     )
                 })}
         </div>
+
     </>
   );
 };
