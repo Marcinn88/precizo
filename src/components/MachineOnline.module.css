@@ -211,10 +211,36 @@
 }
 .Filter_scrollMenu{
     position: absolute;
-    top: 70px;
-    right:0;
+    top: 75px;
+    right:-5px;
     z-index: 3;
+    background-color: #1c1c1a;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px 0;
 }
+.Filter_scrollMenu_EL{
+    padding: 10px 0;
+    margin: 0;
+    font-family: Oswald;
+    font-size: 15px;
+    color:white;
+    font-weight: 400;
+    width: 90%;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+.Filter_scrollMenu_EL:hover{
+background-color: rgb(83, 83, 83);
+color: red;
+}
+
 .Filter_scrollMenu_Shadow{
     background-color: rgba(0, 0, 0, 0.089);
     position: fixed;
