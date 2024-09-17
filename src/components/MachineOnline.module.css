@@ -44,11 +44,9 @@
     }
     .Machines_El_zdps{
         background: linear-gradient(0deg, rgb(116, 116, 116) 0%, rgb(223, 223, 223) 100%);
-        /* background: linear-gradient(0deg, rgb(255, 226, 61) 0%, rgb(175, 175, 175) 10%, rgb(255, 255, 255) 100%); */
     }
     .Machines_El_zdps:hover{
         background: linear-gradient(0deg, rgb(160, 160, 160) 0%, rgb(255, 255, 255) 100%);
-        /* background: linear-gradient(0deg, rgb(255, 226, 61) 0%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 100%); */
     }
     .Machines_El_rew{
         background: linear-gradient(0deg, rgb(86, 143, 67) 0%, rgb(146, 194, 137) 100%);
@@ -241,8 +239,8 @@
     user-select: none;
 }
 .Filter_scrollMenu_EL:hover{
-background-color: rgb(83, 83, 83);
-color: red;
+    background-color: rgb(83, 83, 83);
+    color: red;
 }
 
 .Filter_scrollMenu_Shadow{
