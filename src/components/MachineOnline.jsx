@@ -173,7 +173,7 @@ export const MachineOnline = ({ token }) => {
                     )
                 })}
         </div>
-<p>{filter}</p>
+{/* <p>{filter}</p> */}
     </>
   );
 };
