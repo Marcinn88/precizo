@@ -1,0 +1,11 @@
+{
+    "options":[
+                {"filtr": "Wszystkie"},
+                {"filtr": "1"},
+                {"filtr": "2"},
+                {"filtr": "3"},
+                {"filtr": "4"},
+                {"filtr": "5"},
+                {"filtr": "6"}
+            ]
+}

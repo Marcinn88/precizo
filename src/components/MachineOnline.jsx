@@ -2,9 +2,11 @@ import { Nav } from "./Nav";
 import styles from "./MachineOnline.module.css";
 import 'react-notifications/lib/notifications.css';
 import React, { useState } from "react";
+import { nanoid } from "nanoid";
+
 
 import data from "../JSON/ScoutAPI_machines_Online.json";
-import { nanoid } from "nanoid";
+import options from "../JSON/config.json"
 
 import runner from "../images/runner.svg"
 import status from "../images/status.svg"
@@ -12,10 +14,12 @@ import area from "../images/area.svg"
 import sort from "../images/sort.svg"
 
 const dane = data.data;
+const filterOptions = options.options
 
 export const MachineOnline = ({ token }) => {
 
     const [scrollMenu, setScrollMenu] = useState()
+    const [filter, setFilter] = useState()
 
     const closeScrollMenu = () => {
         setScrollMenu(false)
@@ -27,10 +31,12 @@ export const MachineOnline = ({ token }) => {
         console.log("open menu")
     }
 
-    const onOpenSite = () =>{
-        console.log("dane",dane)
-    }
-    onOpenSite()
+    // const onOpenSite = () =>{
+    //     // console.log("dane",dane)
+    //     // console.log("opcje", filterOptions)
+    //     // console.log("data loaded...")
+    // }
+    // onOpenSite()
 
     const timeChanger = (total_time) => {
         var sec_num = parseInt(total_time, 10);
@@ -54,43 +60,43 @@ export const MachineOnline = ({ token }) => {
 
     }
 
+    const onFilter = (e) => {
+        e == "Wszystkie" ? setFilter(0) : setFilter(e)
+        closeScrollMenu()
+    }
 
 
   return (
     <>
       <Nav />
       <div className={styles.Machines_FilterWrapper}>
-            {scrollMenu && 
-                <div className={styles.Filter_scrollMenu_Shadow}
-                    onClick={closeScrollMenu}>
-                </div>}
-            <div  className={styles.Machines_FilterEl} onClick={openScrollMenu}>
-                <img className={styles.Machine_filterIco} src={area} alt=""></img>
-                <p className={styles.Machine_filterTitle}>
-                    Obszar
-                </p>
-                {scrollMenu && 
-                    <div className={styles.Filter_scrollMenu}>
-                        <p className={styles.Filter_scrollMenu_EL}>
-                            1
-                        </p>
-                        <p className={styles.Filter_scrollMenu_EL}>
-                            2
-                        </p>
-                        <p className={styles.Filter_scrollMenu_EL}>
-                            3
-                        </p>
-                        <p className={styles.Filter_scrollMenu_EL}>
-                            4
-                        </p>
-                        <p className={styles.Filter_scrollMenu_EL}>
-                            5
-                        </p>
-                        <p className={styles.Filter_scrollMenu_EL}>
-                            6
-                        </p>
-                    </div>
-                }
+
+            <div  className={styles.Machines_FilterEl}>
+                <div 
+                className={styles.Machines_FilterEl_container}
+                onClick={openScrollMenu}>
+                    <img className={styles.Machine_filterIco} src={area} alt=""></img>
+                    <p className={styles.Machine_filterTitle}> Obszar </p>
+                </div>
+                    {scrollMenu &&
+                    <>
+                        <div className={styles.Filter_scrollMenu}>
+                            {filterOptions
+                            .map(({ filtr })=>{ return(
+                                        <p key={nanoid()} 
+                                        className={styles.Filter_scrollMenu_EL} 
+                                        onClick={(e)=>{
+                                            onFilter(e.target.innerText);   
+                                        }}>
+                                        {/* onClick={(e)=>{console.log(e.target.innerText)}}> */}
+                                            {filtr}
+                                        </p>            
+                                )
+                            })}
+                        </div>
+                            <div className={styles.Filter_scrollMenu_Shadow} onClick={closeScrollMenu}></div>
+                            </>
+                        }
             </div>
             <div  className={styles.Machines_FilterEl}>
                 <img className={styles.Machine_filterIco} src={sort} alt=""></img>
@@ -167,7 +173,7 @@ export const MachineOnline = ({ token }) => {
                     )
                 })}
         </div>
-
+<p>{filter}</p>
     </>
   );
 };
