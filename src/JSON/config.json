@@ -7,5 +7,9 @@
                 {"filtr": "4"},
                 {"filtr": "5"},
                 {"filtr": "6"}
+            ],
+    "sortOptions":[
+                {"sort": "A -> Z", "value": 0},
+                {"sort": "Z -> A", "value": 1}
             ]
 }

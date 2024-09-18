@@ -15,26 +15,37 @@ import sort from "../images/sort.svg"
 
 const dane = data.data;
 const filterOptions = options.options
+const sortOptions = options.sortOptions
 
 export const MachineOnline = ({ token }) => {
 
     const [scrollMenu, setScrollMenu] = useState()
-    const [filter, setFilter] = useState()
+    const [scrollMenuSort, setScrollMenuSort] = useState()
+    const [filter, setFilter] = useState(0)
+    const [sortState, setSortState] = useState(0)
 
     const closeScrollMenu = () => {
         setScrollMenu(false)
-        console.log("close menu")
     }
 
     const openScrollMenu = () => {
         setScrollMenu(true)
-        console.log("open menu")
+    }
+
+    const closeScrollMenuSort = () => {
+        setScrollMenuSort(false)
+    }
+
+    const openScrollMenuSort = () => {
+        setScrollMenuSort(true)
     }
 
     // const onOpenSite = () =>{
-    //     // console.log("dane",dane)
-    //     // console.log("opcje", filterOptions)
-    //     // console.log("data loaded...")
+    //     console.log("dane",dane)
+    //     const filtrowanie = dane.filter(({zone})=>{return zone == 1})
+    //     console.log("filtrowane dane", filtrowanie)
+    //     console.log("opcje", filterOptions)
+    //     console.log("data loaded...")
     // }
     // onOpenSite()
 
@@ -86,9 +97,8 @@ export const MachineOnline = ({ token }) => {
                                         <p key={nanoid()} 
                                         className={styles.Filter_scrollMenu_EL} 
                                         onClick={(e)=>{
-                                            onFilter(e.target.innerText);   
+                                            onFilter(filtr);   
                                         }}>
-                                        {/* onClick={(e)=>{console.log(e.target.innerText)}}> */}
                                             {filtr}
                                         </p>            
                                 )
@@ -99,16 +109,36 @@ export const MachineOnline = ({ token }) => {
                         }
             </div>
             <div  className={styles.Machines_FilterEl}>
-                <img className={styles.Machine_filterIco} src={sort} alt=""></img>
-                <p className={styles.Machine_filterTitle}>
-                    Sortuj
-                </p>
+                <div 
+                className={styles.Machines_FilterEl_container}
+                onClick={openScrollMenuSort}>
+                    <img className={styles.Machine_filterIco} src={sort} alt=""></img>
+                    <p className={styles.Machine_filterTitle}> Sortuj </p>
+                </div>
+                    {scrollMenuSort &&
+                    <>
+                        <div className={styles.Filter_scrollMenu}>
+                            {sortOptions
+                            .map(({ sort })=>{ return(
+                                        <p key={nanoid()} 
+                                        className={styles.Filter_scrollMenu_EL} 
+                                        // onClick={(e)=>{onFilter(sort)}}
+                                        >
+                                            {sort}
+                                        </p>            
+                                )
+                            })}
+                        </div>
+                            <div className={styles.Filter_scrollMenu_Shadow} onClick={closeScrollMenuSort}></div>
+                            </>
+                        }
             </div>
         </div>
       <div className={styles.Machines_wrapper}>
-            {dane.sort((a, b) => endTime(a.order_tj, a.counter, a.total_quantity) - endTime(b.order_tj, b.counter, b.total_quantity))
-
-                .map(({
+            {dane
+            .filter(({zone})=>{return filter == 0 ? zone : zone == filter})
+            .sort((a, b) => endTime(a.order_tj, a.counter, a.total_quantity) - endTime(b.order_tj, b.counter, b.total_quantity))
+            .map(({
                 machine_number, 
                 machine_name, 
                 order, 
@@ -161,10 +191,10 @@ export const MachineOnline = ({ token }) => {
                                 <p className={styles.Machine_title}> Plan. koniec: </p>
                                 <p className={styles.Machine_value}> {timeChanger(endTime(order_tj, counter, total_quantity))} </p>
                             </div>
-                            <div className={styles.Machine_line}>
+                            {/* <div className={styles.Machine_line}>
                                 <p className={styles.Machine_title}> Czas: </p>
                                 <p className={styles.Machine_value}> {program_time_sec} </p>
-                            </div>
+                            </div> */}
                         </div>
                         <div className={styles.Machine_line}>
                             <p className={styles.Machine_counter}> {counter} / {total_quantity} </p>
