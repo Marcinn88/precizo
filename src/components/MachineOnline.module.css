@@ -265,3 +265,56 @@
     left:0;
     z-index: 3;
 }
+
+.Machines_TopMenu_Wrapper{
+    background-color: #1c1c1a;
+    max-width: 500px;
+    width: 90%;
+    height: 60px;
+    margin: 0 auto 10px auto;
+    border: 1px solid black;
+    border-top: 1px solid #1c1c1a;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.TopMenu_El,
+.TopMenu_El_Active{
+    background-color: #292929;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.TopMenu_El_Active{
+    background-color: #3a3a3a;
+}
+.TopMenu_El:hover,
+.TopMenu_El_Active:hover{
+    background-color: #404040;
+    border: 1px solid red;
+}
+
+.TopMenu_El_img{
+    width: 30px;
+}
+
+.TopMenu_El_title{
+    margin: 0;
+    padding: 0;
+    font-family: Oswald;
+    font-size: 15px;
+    color:white;
+    font-weight: 400;
+    user-select: none;
+}

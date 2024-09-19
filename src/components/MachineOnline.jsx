@@ -12,6 +12,8 @@ import runner from "../images/runner.svg"
 import status from "../images/status.svg"
 import area from "../images/area.svg"
 import sort from "../images/sort.svg"
+import machineIco from "../images/production.svg"
+import tasksIco from "../images/tasks.svg"
 
 const dane = data.data;
 const filterOptions = options.options
@@ -23,6 +25,7 @@ export const MachineOnline = ({ token }) => {
     const [scrollMenuSort, setScrollMenuSort] = useState()
     const [filter, setFilter] = useState(0)
     const [sortState, setSortState] = useState(0)
+    const [activeCard, setActiveCard] = useState("Machines")
 
     const closeScrollMenu = () => {
         setScrollMenu(false)
@@ -40,14 +43,14 @@ export const MachineOnline = ({ token }) => {
         setScrollMenuSort(true)
     }
 
-    // const onOpenSite = () =>{
-    //     console.log("dane",dane)
-    //     const filtrowanie = dane.filter(({zone})=>{return zone == 1})
-    //     console.log("filtrowane dane", filtrowanie)
-    //     console.log("opcje", filterOptions)
-    //     console.log("data loaded...")
-    // }
-    // onOpenSite()
+    const onOpenSite = () => {
+        console.log("dane",dane)
+        // const filtrowanie = dane.filter(({zone})=>{return zone == 1})
+        // console.log("filtrowane dane", filtrowanie)
+        // console.log("opcje", filterOptions)
+        // console.log("data loaded...")
+    }
+    onOpenSite()
 
     const timeChanger = (total_time) => {
         var sec_num = parseInt(total_time, 10);
@@ -76,12 +79,41 @@ export const MachineOnline = ({ token }) => {
         closeScrollMenu()
     }
 
+    const fromStringToDate = (date, time) => {
+        const year = ""
+        const month = ""
+        const day = ""
+        const hour = ""
+        const minute = ""
+        const second = ""
+        const data = new Date(Date.UTC(year,month,day,hour-2,minute,second,0))
+    }
+
+    const fromDatetoTS = () => {
+        Math.floor(new Date(data).getTime()/1000.0) 
+    }
 
   return (
     <>
       <Nav />
-      <div className={styles.Machines_FilterWrapper}>
-
+    {/* Górna belka */}
+        <div className={styles.Machines_TopMenu_Wrapper}>
+            <div className={activeCard=="Machines" ? styles.TopMenu_El_Active : styles.TopMenu_El}
+                onClick={()=>{setActiveCard("Machines")}}>
+                <img className={styles.TopMenu_El_img} src={machineIco}></img>
+                <p className={styles.TopMenu_El_title}>Maszyny</p>
+            </div>
+            <div className={activeCard=="Tasks" ? styles.TopMenu_El_Active : styles.TopMenu_El}
+                onClick={()=>{setActiveCard("Tasks")}}>
+                <img className={styles.TopMenu_El_img} src={tasksIco}></img>
+                <p className={styles.TopMenu_El_title}>Zadania</p>
+            </div>
+        </div>
+        
+    {/* Karty z maszynami */}
+    {activeCard=="Machines"&&<div className={styles.CardsWrapper}>
+        {/* Filtry kart */}
+        <div className={styles.Machines_FilterWrapper}>
             <div  className={styles.Machines_FilterEl}>
                 <div 
                 className={styles.Machines_FilterEl_container}
@@ -134,7 +166,9 @@ export const MachineOnline = ({ token }) => {
                         }
             </div>
         </div>
-      <div className={styles.Machines_wrapper}>
+    
+        {/* Karty maszyn */}
+        <div className={styles.Machines_wrapper}>
             {dane
             .filter(({zone})=>{return filter == 0 ? zone : zone == filter})
             .sort((a, b) => endTime(a.order_tj, a.counter, a.total_quantity) - endTime(b.order_tj, b.counter, b.total_quantity))
@@ -203,7 +237,7 @@ export const MachineOnline = ({ token }) => {
                     )
                 })}
         </div>
-{/* <p>{filter}</p> */}
+    </div>}
     </>
   );
 };
