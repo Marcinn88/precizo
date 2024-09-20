@@ -28,6 +28,7 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     cursor: pointer;
+    height: 400px;
 }
 
     .Machines_El{

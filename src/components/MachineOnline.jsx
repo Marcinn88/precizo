@@ -26,22 +26,22 @@ export const MachineOnline = ({ token }) => {
     const [filter, setFilter] = useState(0)
     const [sortState, setSortState] = useState(0)
     const [activeCard, setActiveCard] = useState("Machines")
+    const [timeValues, setTimeValues] = useState({
+        "order":{
+        "orderNo": "",
+        "orderTimes": 
+        {
+            "startDate": 0,
+            "startDateTS": 0,
+            "planTime": 0,
+            "planQuantity":0
+        }}
+    })
 
-    const closeScrollMenu = () => {
-        setScrollMenu(false)
-    }
-
-    const openScrollMenu = () => {
-        setScrollMenu(true)
-    }
-
-    const closeScrollMenuSort = () => {
-        setScrollMenuSort(false)
-    }
-
-    const openScrollMenuSort = () => {
-        setScrollMenuSort(true)
-    }
+    const closeScrollMenu = () => { setScrollMenu(false) }
+    const openScrollMenu = () => { setScrollMenu(true) }
+    const closeScrollMenuSort = () => { setScrollMenuSort(false) }
+    const openScrollMenuSort = () => { setScrollMenuSort(true) }
 
     const onOpenSite = () => {
         console.log("dane",dane)
@@ -80,17 +80,20 @@ export const MachineOnline = ({ token }) => {
     }
 
     const fromStringToDate = (date, time) => {
-        const year = ""
-        const month = ""
-        const day = ""
-        const hour = ""
-        const minute = ""
-        const second = ""
-        const data = new Date(Date.UTC(year,month,day,hour-2,minute,second,0))
+        const year = parseInt(date.slice( 6, 10 ))
+        const month = parseInt(date.slice( 3, 5 )) - 1
+        const day = parseInt(date.slice( 0, 2 ))
+        const hours = parseInt(time.slice( 0, 2 )) - 2
+        const minutes = parseInt(time.slice( 3, 5))
+        const seconds = parseInt(time.slice( 6, 8 ))
+        console.log(year, month, day, hours, minutes, seconds)
+        const data = new Date(Date.UTC(year,month,day,hours,minutes,seconds,0))
+        return data
     }
 
-    const fromDatetoTS = () => {
-        Math.floor(new Date(data).getTime()/1000.0) 
+    const fromDatetoTS = (data) => {
+       const dateTS = Math.floor(new Date(data).getTime()/1000.0) 
+       return dateTS
     }
 
   return (
@@ -109,9 +112,8 @@ export const MachineOnline = ({ token }) => {
                 <p className={styles.TopMenu_El_title}>Zadania</p>
             </div>
         </div>
-        
     {/* Karty z maszynami */}
-    {activeCard=="Machines"&&<div className={styles.CardsWrapper}>
+    {activeCard == "Machines" && <div className={styles.CardsWrapper}>
         {/* Filtry kart */}
         <div className={styles.Machines_FilterWrapper}>
             <div  className={styles.Machines_FilterEl}>
@@ -167,6 +169,23 @@ export const MachineOnline = ({ token }) => {
             </div>
         </div>
     
+        <div>
+            <button onClick={()=>{dane.map(({order, start_date, start_time, order_tpz, order_tj, total_quantity, counter})=>{
+            setTimeValues({...timeValues,
+                "order": {
+                    "orderNo": order,
+                    "orderTimes": 
+                    {
+                        "startDate": fromStringToDate(start_date, start_time), 
+                        "startDateTS": fromDatetoTS(fromStringToDate(start_date, start_time)),
+                        "planTime": (parseInt(order_tpz) + (parseInt(total_quantity) - parseInt(counter)) * parseInt(order_tj)),
+                        "planQuantity": 0
+                    }
+                }}
+        )
+        })}}>Create</button>
+        <button onClick={()=>{console.log(timeValues)}}>Log</button>
+        </div>
         {/* Karty maszyn */}
         <div className={styles.Machines_wrapper}>
             {dane
@@ -176,8 +195,6 @@ export const MachineOnline = ({ token }) => {
                 machine_number, 
                 machine_name, 
                 order, 
-                operation_name, 
-                operation_number,
                 operator,
                 start_date,
                 start_time,
@@ -187,6 +204,7 @@ export const MachineOnline = ({ token }) => {
                 priorytet,
                 status_change,
                 order_tj,
+                order_tpz,
                 order_status
         })=>{
                 return(
@@ -226,12 +244,36 @@ export const MachineOnline = ({ token }) => {
                                 <p className={styles.Machine_value}> {timeChanger(endTime(order_tj, counter, total_quantity))} </p>
                             </div>
                             {/* <div className={styles.Machine_line}>
+                                <p className={styles.Machine_title}> Start Date: </p>
+                                <p className={styles.Machine_value}> {fromStringToDate(start_date, start_time).toString()} </p>
+                            </div> */}
+                            <div className={styles.Machine_line}>
+                                <p className={styles.Machine_title}> Start TS: </p>
+                                <p className={styles.Machine_value}> {fromDatetoTS(fromStringToDate(start_date, start_time))} </p>
+                            </div>
+                            <div className={styles.Machine_line}>
+                                <p className={styles.Machine_title}>  Teraz TS: </p>
+                                <p className={styles.Machine_value}> {fromDatetoTS(new Date())} </p>
+                            </div>
+                            <div className={styles.Machine_line}>
+                                <p className={styles.Machine_title}> Czas plan s: </p>
+                                <p className={styles.Machine_value}> {(parseInt(order_tpz) + (parseInt(total_quantity) - parseInt(counter)) * parseInt(order_tj))} </p>
+                            </div>
+                            <div className={styles.Machine_line}>
+                                <p className={styles.Machine_title}> Od start do Teraz </p>
+                                {fromDatetoTS(new Date()) > fromDatetoTS(fromStringToDate(start_date, start_time))+(parseInt(order_tpz) + (parseInt(total_quantity) - parseInt(counter)) * parseInt(order_tj))?
+                                <p className={styles.Machine_value}> Spóźnienie! {fromDatetoTS(new Date())-fromDatetoTS(fromStringToDate(start_date, start_time))} </p>:
+                                <p className={styles.Machine_value}> Pozostało: {fromDatetoTS(new Date())-fromDatetoTS(fromStringToDate(start_date, start_time))} </p>}
+                                {/* <p className={styles.Machine_value}> {fromDatetoTS(new Date())-fromDatetoTS(fromStringToDate(start_date, start_time))} </p> */}
+
+                            </div>
+                            {/* <div className={styles.Machine_line}>
                                 <p className={styles.Machine_title}> Czas: </p>
                                 <p className={styles.Machine_value}> {program_time_sec} </p>
                             </div> */}
-                        </div>
                         <div className={styles.Machine_line}>
                             <p className={styles.Machine_counter}> {counter} / {total_quantity} </p>
+                        </div>
                         </div>
                     </div>
                     )
