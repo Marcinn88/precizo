@@ -206,7 +206,9 @@ export const MachineOnline = ({ token }) => {
                 order_tj,
                 order_tpz,
                 order_status
-        })=>{
+        }) => {
+            const startTS = fromDatetoTS(fromStringToDate(start_date, start_time))
+            const nowTS = fromDatetoTS(new Date())
                 return(
                     <div className={
                         order_status == "1-PPP" ? styles.Machines_El_ppp:
@@ -249,11 +251,11 @@ export const MachineOnline = ({ token }) => {
                             </div> */}
                             <div className={styles.Machine_line}>
                                 <p className={styles.Machine_title}> Start TS: </p>
-                                <p className={styles.Machine_value}> {fromDatetoTS(fromStringToDate(start_date, start_time))} </p>
+                                <p className={styles.Machine_value}> {startTS} </p>
                             </div>
                             <div className={styles.Machine_line}>
                                 <p className={styles.Machine_title}>  Teraz TS: </p>
-                                <p className={styles.Machine_value}> {fromDatetoTS(new Date())} </p>
+                                <p className={styles.Machine_value}> {nowTS} </p>
                             </div>
                             <div className={styles.Machine_line}>
                                 <p className={styles.Machine_title}> Czas plan s: </p>
@@ -262,7 +264,7 @@ export const MachineOnline = ({ token }) => {
                             <div className={styles.Machine_line}>
                                 <p className={styles.Machine_title}> Od start do Teraz </p>
                                 {fromDatetoTS(new Date()) > fromDatetoTS(fromStringToDate(start_date, start_time))+(parseInt(order_tpz) + (parseInt(total_quantity) - parseInt(counter)) * parseInt(order_tj))?
-                                <p className={styles.Machine_value}> Spóźnienie! {fromDatetoTS(new Date())-fromDatetoTS(fromStringToDate(start_date, start_time))} </p>:
+                                <p className={styles.Machine_value}> Spóźnienie! -{fromDatetoTS(new Date())-fromDatetoTS(fromStringToDate(start_date, start_time))} </p>:
                                 <p className={styles.Machine_value}> Pozostało: {fromDatetoTS(new Date())-fromDatetoTS(fromStringToDate(start_date, start_time))} </p>}
                                 {/* <p className={styles.Machine_value}> {fromDatetoTS(new Date())-fromDatetoTS(fromStringToDate(start_date, start_time))} </p> */}
 
