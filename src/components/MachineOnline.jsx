@@ -485,18 +485,18 @@ export const MachineOnline = ({ token }) => {
         <div className={styles.Machines_wrapper}>
               <div className={styles.Tasks_wrapper}>
                 <p className={styles.Tasks_Title}>Lista zadań leadera.</p>
-          {tasks.map(({title, task, everyDayTask})=>{return(
-            <>
-              <div className={styles.Tasks_List}>
-                <div className={styles.Task_El}>
-                  <p className={styles.Task_El_Title}>{title}</p>
-                  <p className={styles.Task_El_Subtitle}>{task}</p>
-                </div>
+                {tasks.map(({title, task, everyDayTask})=>{return(
+                  <>
+                    <div className={styles.Tasks_List}>
+                      <div className={styles.Task_El}>
+                        <p className={styles.Task_El_Title}>{title}</p>
+                        <p className={styles.Task_El_Subtitle}>{task}</p>
+                        <button className={styles.Task_El_Btn}>Potwierdź</button>
+                      </div>
+                    </div>
+                  </>
+                )})}
               </div>
-            </>
-          )})}
-              </div>
-
         </div>
       </div>
       )

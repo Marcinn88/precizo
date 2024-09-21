@@ -1,8 +1,8 @@
 {
     "tasks":[
         {
-            "title":"Audit 5S",
-            "task": "Autyd na obszarze z zakresu 5s.",
+            "title":"Audit 5s",
+            "task": "Audit na obszarze z zakresu 5s.",
             "everyDayTask": true
         },
         {
