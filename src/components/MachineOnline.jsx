@@ -485,17 +485,21 @@ export const MachineOnline = ({ token }) => {
         <div className={styles.Machines_wrapper}>
               <div className={styles.Tasks_wrapper}>
                 <p className={styles.Tasks_Title}>Lista zadań leadera.</p>
-                {tasks.map(({title, task, everyDayTask})=>{return(
+                {tasks.map(({ title, task, finish, everyDayTask }, index ) => { return (
                   <>
                     <div className={styles.Tasks_List}>
                       <div className={styles.Task_El}>
                         <p className={styles.Task_El_Title}>{title}</p>
                         <p className={styles.Task_El_Subtitle}>{task}</p>
-                        <button className={styles.Task_El_Btn}>Potwierdź</button>
+                        <button onClick={()=>{console.log(finish)}} className={styles.Task_El_Btn}>Potwierdź</button>
                       </div>
                     </div>
                   </>
                 )})}
+                <button onClick={()=>{alert("Tu pojawi się okno dodawania nowego zadania.")}}
+                  className={styles.Task_Btn}>
+                    Dodaj nowe zadanie
+                </button>
               </div>
         </div>
       </div>

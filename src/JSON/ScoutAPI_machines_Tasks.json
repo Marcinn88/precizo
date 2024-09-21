@@ -3,27 +3,32 @@
         {
             "title":"Audit 5s",
             "task": "Audit na obszarze z zakresu 5s.",
-            "everyDayTask": true
+            "everyDayTask": true,
+            "finish": false
         },
         {
             "title":"Lista obecności",
             "task": "Kontrola obecności pracowników.",
-            "everyDayTask": true
+            "everyDayTask": true,
+            "finish": false
         },
         {
             "title":"Planowanie pracy na obszarze.",
             "task": "Organizacja obowiązków pracowników.",
-            "everyDayTask": true
+            "everyDayTask": true,
+            "finish": false
         },
         {
             "title":"Braki produkcyjne",
             "task": "Weryfikacja braków z dnia poprzedniego.",
-            "everyDayTask": true
+            "everyDayTask": true,
+            "finish": false
         },
         {
             "title":"Straty produkcyjne",
             "task": "Weryfikacja strat z dnia poprzedniego.",
-            "everyDayTask": true
+            "everyDayTask": true,
+            "finish": false
         }
     ]
     }
