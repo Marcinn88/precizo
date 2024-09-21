@@ -6,7 +6,7 @@ import { nanoid } from "nanoid";
 
 import data from "../JSON/ScoutAPI_machines_Online.json";
 import options from "../JSON/config.json";
-import dataTasks from "../JSON/ScoutAPI_machines_Tasks.json"
+import dataTasks from "../JSON/ScoutAPI_machines_Tasks.json";
 
 import runner from "../images/runner.svg";
 import status from "../images/status.svg";
@@ -18,7 +18,7 @@ import tasksIco from "../images/tasks.svg";
 const MINUTE_MS = 60000;
 
 const dane = data.data;
-const tasks = dataTasks.tasks
+const tasks = dataTasks.tasks;
 const filterOptions = options.options;
 const sortOptions = options.sortOptions;
 
@@ -28,7 +28,8 @@ export const MachineOnline = ({ token }) => {
   const [filter, setFilter] = useState(0);
   const [sortState, setSortState] = useState(0);
   const [activeCard, setActiveCard] = useState("Machines");
-  const [time, setTime] = useState(1)
+  const [time, setTime] = useState(1);
+  const [taskState, setTaskState] = useState(tasks);
 
   const ref = () => {
     window.location.reload(false);
@@ -38,11 +39,15 @@ export const MachineOnline = ({ token }) => {
     const interval = setInterval(() => {
       console.log("Logs every minute");
       // ref();
-      const data = new Date()
-      setTime(data)
+      const data = new Date();
+      setTime(data);
     }, MINUTE_MS);
 
     return () => clearInterval(interval); // The unmount function, in which you need to clear your interval to prevent memory leaks.
+  }, []);
+
+  useEffect(() => {
+    return () => console.log(tasks);
   }, []);
 
   //   const [timeValues, setTimeValues] = useState({
@@ -77,7 +82,7 @@ export const MachineOnline = ({ token }) => {
     // console.log("opcje", filterOptions)
     // console.log("data loaded...")
   };
-  onOpenSite();
+  // onOpenSite();
 
   const timeChanger = (total_time) => {
     var sec_num = parseInt(total_time, 10);
@@ -286,11 +291,11 @@ export const MachineOnline = ({ token }) => {
               .filter(({ zone }) => {
                 return filter == 0 ? zone : zone == filter;
               })
-                .sort(
-                  (a, b) =>
-                    endTime(a.order_tj, a.counter, a.total_quantity) -
-                    endTime(b.order_tj, b.counter, b.total_quantity)
-                )
+              .sort(
+                (a, b) =>
+                  endTime(a.order_tj, a.counter, a.total_quantity) -
+                  endTime(b.order_tj, b.counter, b.total_quantity)
+              )
               .map(
                 ({
                   machine_number,
@@ -308,8 +313,10 @@ export const MachineOnline = ({ token }) => {
                   order_tpz,
                   order_status,
                 }) => {
-
-                  const dateString = fromStringToDate(start_date, start_time).toString()
+                  const dateString = fromStringToDate(
+                    start_date,
+                    start_time
+                  ).toString();
                   const startTS = fromDatetoTS(
                     fromStringToDate(start_date, start_time)
                   );
@@ -441,7 +448,9 @@ export const MachineOnline = ({ token }) => {
                             Planowana sztuka:
                           </p>
                           <p className={styles.Machine_value}>
-                            {planQuantityCounter()>total_quantity?total_quantity:planQuantityCounter()}
+                            {planQuantityCounter() > total_quantity
+                              ? total_quantity
+                              : planQuantityCounter()}
                           </p>
                         </div>
                         <div className={styles.Machine_line}>
@@ -478,33 +487,65 @@ export const MachineOnline = ({ token }) => {
               )}
           </div>
         </div>
-      ):
-      (
+      ) : (
         <div className={styles.CardsWrapper}>
-        {/* Karty maszyn */}
-        <div className={styles.Machines_wrapper}>
-              <div className={styles.Tasks_wrapper}>
-                <p className={styles.Tasks_Title}>Lista zadań leadera.</p>
-                {tasks.map(({ title, task, finish, everyDayTask }, index ) => { return (
-                  <>
-                    <div className={styles.Tasks_List}>
-                      <div className={styles.Task_El}>
+          {/* Karty maszyn */}
+          <div className={styles.Machines_wrapper}>
+            <div className={styles.Tasks_wrapper}>
+              <p className={styles.Tasks_Title}>Lista zadań leadera.</p>
+              <div className={styles.Tasks_List}>
+                {taskState.map(
+                  ({ title, task, finish, everyDayTask }, index) => {
+                    return (
+                      <div className={styles.Task_El} key={index}>
                         <p className={styles.Task_El_Title}>{title}</p>
                         <p className={styles.Task_El_Subtitle}>{task}</p>
-                        <button onClick={()=>{console.log(finish)}} className={styles.Task_El_Btn}>Potwierdź</button>
+                        {finish !== true ? (
+                          <button
+                            onClick={() => {
+                              const updatedTaskState = [...taskState];
+                              updatedTaskState[index] = {
+                                ...updatedTaskState[index],
+                                finish: true,
+                              };
+                              setTaskState(updatedTaskState);
+                            }}
+                            className={styles.Task_El_Btn}
+                          >
+                            Potwierdź
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => {
+                              const updatedTaskState = [...taskState];
+                              updatedTaskState[index] = {
+                                ...updatedTaskState[index],
+                                finish: false,
+                              };
+                              setTaskState(updatedTaskState);
+                            }}
+                            className={styles.Task_El_Btn_Finish}
+                          >
+                            Cofnij
+                          </button>
+                        )}
                       </div>
-                    </div>
-                  </>
-                )})}
-                <button onClick={()=>{alert("Tu pojawi się okno dodawania nowego zadania.")}}
-                  className={styles.Task_Btn}>
-                    Dodaj nowe zadanie
-                </button>
+                    );
+                  }
+                )}
               </div>
+              <button
+                onClick={() => {
+                  alert("Tu pojawi się okno dodawania nowego zadania.");
+                }}
+                className={styles.Task_Btn}
+              >
+                Dodaj nowe zadanie
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-      )
-      }
+      )}
     </>
   );
 };

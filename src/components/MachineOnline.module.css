@@ -408,7 +408,8 @@
     margin: 0;
 }
 
-.Task_El_Btn{
+.Task_El_Btn,
+.Task_El_Btn_Finish{
     position: absolute;
     right:10px;
     top:calc(50%-15px);
@@ -420,9 +421,14 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
-.Task_El_Btn:hover{
+.Task_El_Btn:hover,
+.Task_El_Btn_Finish:hover{
     background-color: #505050;
     border: 1px solid red;
+}
+.Task_El_Btn_Finish{
+    background-color: #3a3a3a;
+    color: #1c1c1a;
 }
 
 .Task_Btn{
@@ -441,7 +447,8 @@
 }
 
 @media screen and (max-width: 600px) {
-    .Task_El_Btn{
+    .Task_El_Btn,
+    .Task_El_Btn_Finish{
         position:static;
         margin-bottom: 10px;
         width: 80px;
