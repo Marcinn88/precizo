@@ -14,6 +14,7 @@ import area from "../images/area.svg";
 import sort from "../images/sort.svg";
 import machineIco from "../images/production.svg";
 import tasksIco from "../images/tasks.svg";
+import acceptIco from "../images/accept.svg";
 
 const MINUTE_MS = 60000;
 
@@ -46,9 +47,9 @@ export const MachineOnline = ({ token }) => {
     return () => clearInterval(interval); // The unmount function, in which you need to clear your interval to prevent memory leaks.
   }, []);
 
-  useEffect(() => {
-    return () => console.log(tasks);
-  }, []);
+  // useEffect(() => {
+  //   return () => console.log(tasks);
+  // }, []);
 
   //   const [timeValues, setTimeValues] = useState({
   //     order: {
@@ -562,6 +563,12 @@ export const MachineOnline = ({ token }) => {
                         }
                         key={index}
                       >
+                        {finish && (
+                          <img
+                            className={styles.Task_El_ico}
+                            src={acceptIco}
+                          ></img>
+                        )}
                         <p
                           className={
                             finish !== true
@@ -571,7 +578,7 @@ export const MachineOnline = ({ token }) => {
                         >
                           {title}
                         </p>
-                        {date !== "" && (
+                        {finish && (
                           <p className={styles.Task_El_Note}>
                             (Wykonano: {date}, {time})
                           </p>
