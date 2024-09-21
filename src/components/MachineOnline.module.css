@@ -387,7 +387,8 @@
     box-shadow: 12px 13px 11px -12px rgba(10, 10, 10, 1);
 }
 .Task_El:hover{
-    background-color: #636363;
+    background-color: #505050;
+    border: 1px solid red;
 }
 
 .Task_El_Title{
