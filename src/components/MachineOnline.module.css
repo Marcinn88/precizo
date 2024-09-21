@@ -347,3 +347,58 @@
     bottom:0;
     left:0;
 }
+
+.Tasks_wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: Oswald;
+    color:white;
+    font-weight: 400;
+}
+
+.Tasks_Title{
+    font-size: 20px;
+    margin: 5px;
+}
+.Tasks_List{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.Task_El{
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #404040;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    -webkit-box-shadow: 12px 13px 11px -12px rgba(10, 10, 10, 1);
+    -moz-box-shadow: 12px 13px 11px -12px rgba(10, 10, 10, 1);
+    box-shadow: 12px 13px 11px -12px rgba(10, 10, 10, 1);
+}
+.Task_El:hover{
+    background-color: #636363;
+}
+
+.Task_El_Title{
+    font-size: 17px;
+    margin: 0;
+    padding: 5px;
+}
+
+.Task_El_Subtitle{
+    font-size: 15px;
+    font-weight: 200;
+    padding: 5px;
+    margin: 0;
+}

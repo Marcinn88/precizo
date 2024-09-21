@@ -6,6 +6,7 @@ import { nanoid } from "nanoid";
 
 import data from "../JSON/ScoutAPI_machines_Online.json";
 import options from "../JSON/config.json";
+import dataTasks from "../JSON/ScoutAPI_machines_Tasks.json"
 
 import runner from "../images/runner.svg";
 import status from "../images/status.svg";
@@ -17,6 +18,7 @@ import tasksIco from "../images/tasks.svg";
 const MINUTE_MS = 60000;
 
 const dane = data.data;
+const tasks = dataTasks.tasks
 const filterOptions = options.options;
 const sortOptions = options.sortOptions;
 
@@ -26,6 +28,7 @@ export const MachineOnline = ({ token }) => {
   const [filter, setFilter] = useState(0);
   const [sortState, setSortState] = useState(0);
   const [activeCard, setActiveCard] = useState("Machines");
+  const [time, setTime] = useState(1)
 
   const ref = () => {
     window.location.reload(false);
@@ -34,10 +37,12 @@ export const MachineOnline = ({ token }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       console.log("Logs every minute");
-      ref();
+      // ref();
+      const data = new Date()
+      setTime(data)
     }, MINUTE_MS);
 
-    return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+    return () => clearInterval(interval); // The unmount function, in which you need to clear your interval to prevent memory leaks.
   }, []);
 
   //   const [timeValues, setTimeValues] = useState({
@@ -155,7 +160,7 @@ export const MachineOnline = ({ token }) => {
         </div>
       </div>
       {/* Karty z maszynami */}
-      {activeCard == "Machines" && (
+      {activeCard == "Machines" && time != 0 ? (
         <div className={styles.CardsWrapper}>
           {/* Filtry kart */}
           <div className={styles.Machines_FilterWrapper}>
@@ -281,11 +286,11 @@ export const MachineOnline = ({ token }) => {
               .filter(({ zone }) => {
                 return filter == 0 ? zone : zone == filter;
               })
-              //   .sort(
-              //     (a, b) =>
-              //       endTime(a.order_tj, a.counter, a.total_quantity) -
-              //       endTime(b.order_tj, b.counter, b.total_quantity)
-              //   )
+                .sort(
+                  (a, b) =>
+                    endTime(a.order_tj, a.counter, a.total_quantity) -
+                    endTime(b.order_tj, b.counter, b.total_quantity)
+                )
               .map(
                 ({
                   machine_number,
@@ -303,6 +308,8 @@ export const MachineOnline = ({ token }) => {
                   order_tpz,
                   order_status,
                 }) => {
+
+                  const dateString = fromStringToDate(start_date, start_time).toString()
                   const startTS = fromDatetoTS(
                     fromStringToDate(start_date, start_time)
                   );
@@ -404,9 +411,9 @@ export const MachineOnline = ({ token }) => {
                           </p>
                         </div>
                         {/* <div className={styles.Machine_line}>
-                                <p className={styles.Machine_title}> Start Date: </p>
-                                <p className={styles.Machine_value}> {fromStringToDate(start_date, start_time).toString()} </p>
-                            </div> */}
+                          <p className={styles.Machine_title}> Start Date: </p>
+                          <p className={styles.Machine_value}> {dateString} </p>
+                        </div>
                         <div className={styles.Machine_line}>
                           <p className={styles.Machine_title}> Start TS: </p>
                           <p className={styles.Machine_value}> {startTS} </p>
@@ -428,14 +435,13 @@ export const MachineOnline = ({ token }) => {
                           <p className={styles.Machine_value}>
                             {totalPlanTime - workTime}
                           </p>
-                          {/* <p className={styles.Machine_value}> {fromDatetoTS(new Date())-fromDatetoTS(fromStringToDate(start_date, start_time))} </p> */}
-                        </div>
+                        </div> */}
                         <div className={styles.Machine_line}>
                           <p className={styles.Machine_title}>
                             Planowana sztuka:
                           </p>
                           <p className={styles.Machine_value}>
-                            {planQuantityCounter()}
+                            {planQuantityCounter()>total_quantity?total_quantity:planQuantityCounter()}
                           </p>
                         </div>
                         <div className={styles.Machine_line}>
@@ -472,7 +478,29 @@ export const MachineOnline = ({ token }) => {
               )}
           </div>
         </div>
-      )}
+      ):
+      (
+        <div className={styles.CardsWrapper}>
+        {/* Karty maszyn */}
+        <div className={styles.Machines_wrapper}>
+              <div className={styles.Tasks_wrapper}>
+                <p className={styles.Tasks_Title}>Lista zadań leadera.</p>
+          {tasks.map(({title, task, everyDayTask})=>{return(
+            <>
+              <div className={styles.Tasks_List}>
+                <div className={styles.Task_El}>
+                  <p className={styles.Task_El_Title}>{title}</p>
+                  <p className={styles.Task_El_Subtitle}>{task}</p>
+                </div>
+              </div>
+            </>
+          )})}
+              </div>
+
+        </div>
+      </div>
+      )
+      }
     </>
   );
 };
