@@ -134,6 +134,60 @@ export const MachineOnline = ({ token }) => {
     return dateTS;
   };
 
+  const getNowDate = () => {
+    const date = new Date();
+
+    const getNowDay = () => {
+      if (date.getDay() < 10) {
+        const day = "0" + date.getDay();
+        return day;
+      }
+      const day = date.getDay();
+      return day;
+    };
+
+    const getNowMonth = () => {
+      if (date.getMonth() < 10) {
+        const month = "0" + date.getMonth();
+        return month;
+      }
+      const month = date.getMonth();
+      return month;
+    };
+    const year = date.getFullYear();
+    return getNowDay() + "." + getNowMonth() + "." + year;
+  };
+
+  const getNowTime = () => {
+    const date = new Date();
+
+    const getNowHours = () => {
+      if (date.getHours() < 10) {
+        const hours = "0" + date.getHours();
+        return hours;
+      }
+      const hours = date.getHours();
+      return hours;
+    };
+    const getNowMinutes = () => {
+      if (date.getMinutes() < 10) {
+        const minutes = "0" + date.getMinutes();
+        return minutes;
+      }
+      const minutes = date.getMinutes();
+      return minutes;
+    };
+    const getNowSeconds = () => {
+      if (date.getSeconds() < 10) {
+        const seconds = "0" + date.getSeconds();
+        return seconds;
+      }
+      const seconds = date.getSeconds();
+      return seconds;
+    };
+    return getNowHours() + ":" + getNowMinutes() + ":" + getNowSeconds();
+  };
+
   return (
     <>
       <Nav />
@@ -495,11 +549,42 @@ export const MachineOnline = ({ token }) => {
               <p className={styles.Tasks_Title}>Lista zadań leadera.</p>
               <div className={styles.Tasks_List}>
                 {taskState.map(
-                  ({ title, task, finish, everyDayTask }, index) => {
+                  (
+                    { title, task, finish, everyDayTask, date, time },
+                    index
+                  ) => {
                     return (
-                      <div className={styles.Task_El} key={index}>
-                        <p className={styles.Task_El_Title}>{title}</p>
-                        <p className={styles.Task_El_Subtitle}>{task}</p>
+                      <div
+                        className={
+                          finish !== true
+                            ? styles.Task_El
+                            : styles.Task_El_Finish
+                        }
+                        key={index}
+                      >
+                        <p
+                          className={
+                            finish !== true
+                              ? styles.Task_El_Title
+                              : styles.Task_El_Title_Finish
+                          }
+                        >
+                          {title}
+                        </p>
+                        {date !== "" && (
+                          <p className={styles.Task_El_Note}>
+                            (Wykonano: {date}, {time})
+                          </p>
+                        )}
+                        <p
+                          className={
+                            finish !== true
+                              ? styles.Task_El_Subtitle
+                              : styles.Task_El_Subtitle_Finish
+                          }
+                        >
+                          {task}
+                        </p>
                         {finish !== true ? (
                           <button
                             onClick={() => {
@@ -507,6 +592,8 @@ export const MachineOnline = ({ token }) => {
                               updatedTaskState[index] = {
                                 ...updatedTaskState[index],
                                 finish: true,
+                                date: getNowDate(),
+                                time: getNowTime(),
                               };
                               setTaskState(updatedTaskState);
                             }}
@@ -521,6 +608,8 @@ export const MachineOnline = ({ token }) => {
                               updatedTaskState[index] = {
                                 ...updatedTaskState[index],
                                 finish: false,
+                                date: "",
+                                time: "",
                               };
                               setTaskState(updatedTaskState);
                             }}
