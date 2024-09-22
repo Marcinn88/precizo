@@ -139,20 +139,21 @@ export const MachineOnline = ({ token }) => {
     const date = new Date();
 
     const getNowDay = () => {
-      if (date.getDay() < 10) {
-        const day = "0" + date.getDay();
+      if (date.getDate() < 10) {
+        const day = "0" + date.getDate();
         return day;
       }
-      const day = date.getDay();
+      const day = date.getDate();
       return day;
     };
 
     const getNowMonth = () => {
       if (date.getMonth() < 10) {
-        const month = "0" + date.getMonth();
+        const calcMonth = date.getMonth() + 1;
+        const month = "0" + calcMonth;
         return month;
       }
-      const month = date.getMonth();
+      const month = date.getMonth() + 1;
       return month;
     };
     const year = date.getFullYear();
