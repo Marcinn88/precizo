@@ -633,6 +633,7 @@ export const MachineOnline = ({ token }) => {
           </div>
         </div>
       )}
+      <p>{sortState}</p>
     </>
   );
 };
