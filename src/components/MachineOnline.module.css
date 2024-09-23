@@ -280,6 +280,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    transition: all 0.2s ease-in-out;
 }
 
 .TopMenu_El,
@@ -320,7 +321,8 @@
     user-select: none;
 }
 
-.Tasks_wrapper{
+.Tasks_wrapper,
+.Employees_wrapper{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -331,7 +333,8 @@
     font-weight: 400;
 }
 
-.Tasks_Title{
+.Tasks_Title,
+.Employees_Title{
     font-size: 20px;
     margin: 5px;
 }
@@ -468,6 +471,19 @@
         bottom:10px;
         left:calc(50% - 15px);
     }
+}
+    @media screen and (max-width: 500px) {
+        .TopMenu_El_Active,
+        .TopMenu_El{
+            width: 60px;
+        }
+        .TopMenu_El_title{
+            display: none;
+        }
+        .Machines_TopMenu_Wrapper{
+            width: 260px;
+            /* transform: scaleX(90%); */
+        }
   } 
 
 .fullBar{
