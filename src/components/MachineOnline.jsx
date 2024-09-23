@@ -649,10 +649,6 @@ export const MachineOnline = ({ token }) => {
           </div>
         </div>
       )}
-
-<div>
-  <p>{sortState}</p>
-</div>
     </>
   );
 };
