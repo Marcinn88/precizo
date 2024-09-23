@@ -47,22 +47,6 @@ export const MachineOnline = ({ token }) => {
     return () => clearInterval(interval); // The unmount function, in which you need to clear your interval to prevent memory leaks.
   }, []);
 
-  // useEffect(() => {
-  //   return () => console.log(tasks);
-  // }, []);
-
-  //   const [timeValues, setTimeValues] = useState({
-  //     order: {
-  //       orderNo: "",
-  //       orderTimes: {
-  //         startDate: 0,
-  //         startDateTS: 0,
-  //         planTime: 0,
-  //         planQuantity: 0,
-  //       },
-  //     },
-  //   });
-
   const closeScrollMenu = () => {
     setScrollMenu(false);
   };
