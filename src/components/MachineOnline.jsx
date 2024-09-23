@@ -190,6 +190,73 @@ export const MachineOnline = ({ token }) => {
     return getNowHours() + ":" + getNowMinutes() + ":" + getNowSeconds();
   };
 
+  const dateString = (start_date, start_time) => {
+    const datestr = fromStringToDate( start_date, start_time ).toString();
+    return datestr
+  }
+  
+  const startTS = (start_date, start_time) => {
+    const startts = fromDatetoTS(fromStringToDate(start_date, start_time))
+    return startts
+  }
+
+  const nowTS = () => {
+    const now = fromDatetoTS(new Date())
+    return now
+  };
+  
+  const workTime = (start_date, start_time) => {
+    const worktime = nowTS(start_date, start_time) - startTS(start_date, start_time)
+    return worktime
+  };
+
+  const totalPlanTime = (order_tpz, total_quantity, order_tj) => {
+  const totalplantime = 
+  parseInt(order_tpz) +
+  parseInt(total_quantity) * parseInt(order_tj);
+    return totalplantime
+}
+  const planTime = (order_tpz, total_quantity, counter, order_tj) =>{
+  const plantime = parseInt(order_tpz) + (parseInt(total_quantity) - parseInt(counter)) * parseInt(order_tj)
+    return plantime
+}
+  
+  const planQuantityCounter = (order_tpz, order_tj, total_quantity, start_date, start_time) => {
+    if (workTime(start_date, start_time) <= order_tpz) {
+      const planQuantity = 0;
+      return planQuantity;
+    }
+    const planQuantity = Math.ceil(
+      (workTime(start_date, start_time) - order_tpz - order_tj) / order_tj
+    );
+    if (planQuantity > total_quantity) {
+      return parseInt(total_quantity)
+    }
+    return planQuantity;
+  };
+
+  const percenOfQuantity = (value, total_quantity) => {
+    const calcPercent = (value * 100) / total_quantity 
+    const percent = calcPercent+ "%";
+    if (percent > 100) {
+      const result = 100 + "%";
+      return result;
+    }
+    const result = percent;
+    return result;
+  };
+
+  const lateTime = (counter, order_tj, order_tpz, total_quantity, start_date, start_time) => {
+    const plan = planQuantityCounter(order_tpz, order_tj, total_quantity, start_date, start_time)
+    if (plan <= counter) {
+      const late = 0
+      return late
+    }
+    const late = (plan - counter) * order_tj
+    return late
+  }
+
+
   return (
     <>
       <Nav />
@@ -276,12 +343,15 @@ export const MachineOnline = ({ token }) => {
               {scrollMenuSort && (
                 <>
                   <div className={styles.Filter_scrollMenu}>
-                    {sortOptions.map(({ sort }) => {
+                    {sortOptions.map(({ sort, value }) => {
                       return (
                         <p
                           key={nanoid()}
                           className={styles.Filter_scrollMenu_EL}
-                          // onClick={(e)=>{onFilter(sort)}}
+                          onClick={()=>{
+                            setSortState(value);
+                            closeScrollMenuSort();
+                          }}
                         >
                           {sort}
                         </p>
@@ -298,48 +368,7 @@ export const MachineOnline = ({ token }) => {
           </div>
 
           <div>
-            {/* <button
-              onClick={() => {
-                dane.map(
-                  ({
-                    order,
-                    start_date,
-                    start_time,
-                    order_tpz,
-                    order_tj,
-                    total_quantity,
-                    counter,
-                  }) => {
-                    setTimeValues({
-                      ...timeValues,
-                      order: {
-                        orderNo: order,
-                        orderTimes: {
-                          startDate: fromStringToDate(start_date, start_time),
-                          startDateTS: fromDatetoTS(
-                            fromStringToDate(start_date, start_time)
-                          ),
-                          planTime:
-                            parseInt(order_tpz) +
-                            (parseInt(total_quantity) - parseInt(counter)) *
-                              parseInt(order_tj),
-                          planQuantity: 0,
-                        },
-                      },
-                    });
-                  }
-                );
-              }}
-            >
-              Create
-            </button>
-            <button
-              onClick={() => {
-                console.log(timeValues);
-              }}
-            >
-              Log
-            </button> */}
+
           </div>
           {/* Karty maszyn */}
           <div className={styles.Machines_wrapper}>
@@ -347,11 +376,18 @@ export const MachineOnline = ({ token }) => {
               .filter(({ zone }) => {
                 return filter == 0 ? zone : zone == filter;
               })
+              
               .sort(
-                (a, b) =>
-                  endTime(a.order_tj, a.counter, a.total_quantity) -
-                  endTime(b.order_tj, b.counter, b.total_quantity)
-              )
+                (a, b) => 
+                  {
+                    if (sortState == 0) {
+                    return endTime(a.order_tj, a.counter, a.total_quantity) - endTime(b.order_tj, b.counter, b.total_quantity)
+                    }{
+                    return lateTime(b.counter, b.order_tj, b.order_tpz, b.total_quantity, b.start_date, b.start_time) - lateTime(a.counter, a.order_tj, a.order_tpz, a.total_quantity, a.start_date, a.start_time)
+                  }
+                  }
+                )
+
               .map(
                 ({
                   machine_number,
@@ -369,47 +405,11 @@ export const MachineOnline = ({ token }) => {
                   order_tpz,
                   order_status,
                 }) => {
-                  const dateString = fromStringToDate(
-                    start_date,
-                    start_time
-                  ).toString();
-                  const startTS = fromDatetoTS(
-                    fromStringToDate(start_date, start_time)
-                  );
 
-                  const nowTS = fromDatetoTS(new Date());
 
-                  const totalPlanTime =
-                    parseInt(order_tpz) +
-                    parseInt(total_quantity) * parseInt(order_tj);
 
-                  const planTime =
-                    parseInt(order_tpz) +
-                    (parseInt(total_quantity) - parseInt(counter)) *
-                      parseInt(order_tj);
 
-                  const workTime = nowTS - startTS;
 
-                  const planQuantityCounter = () => {
-                    if (workTime <= order_tpz) {
-                      const planQuantity = 0;
-                      return planQuantity;
-                    }
-                    const planQuantity = Math.ceil(
-                      (workTime - order_tpz - order_tj) / order_tj
-                    );
-                    return planQuantity;
-                  };
-
-                  const percenOfQuantity = (value) => {
-                    const percent = (value * 100) / total_quantity + "%";
-                    if (percent > 100) {
-                      const result = 100 + "%";
-                      return result;
-                    }
-                    const result = percent;
-                    return result;
-                  };
                   return (
                     <div
                       className={
@@ -500,13 +500,17 @@ export const MachineOnline = ({ token }) => {
                           </p>
                         </div> */}
                         <div className={styles.Machine_line}>
+                          <p className={styles.Machine_title}> Spóźnienie: </p>
+                          <p className={styles.Machine_value}> {lateTime(counter, order_tj, order_tpz, total_quantity, start_date, start_time)} s </p>
+                        </div>
+                        <div className={styles.Machine_line}>
                           <p className={styles.Machine_title}>
                             Planowana sztuka:
                           </p>
                           <p className={styles.Machine_value}>
-                            {planQuantityCounter() > total_quantity
+                            {planQuantityCounter(order_tpz, order_tj, total_quantity, start_date, start_time) > total_quantity
                               ? total_quantity
-                              : planQuantityCounter()}
+                              : planQuantityCounter(order_tpz, order_tj, total_quantity, start_date, start_time)}
                           </p>
                         </div>
                         <div className={styles.Machine_line}>
@@ -516,21 +520,23 @@ export const MachineOnline = ({ token }) => {
                         </div>
                         <div className={styles.Machine_line}>
                           <div className={styles.fullBar}>
-                            <div
-                              style={{ width: percenOfQuantity(counter) }}
-                              className={styles.valueBar}
-                            ></div>
-                            <div
-                              style={{
-                                width: percenOfQuantity(planQuantityCounter()),
-                              }}
-                              className={styles.valuePlanBar}
-                            ></div>
+                              <div className={styles.Bar_container}>
+                                <div className={styles.background_bar}>
+                                </div>
+                                <div style={{ width: percenOfQuantity(counter, total_quantity) }} className={styles.front_bar}>
+                                </div>
+                              </div>
+                              <div className={styles.Bar_container}>
+                                <div className={styles.background_bar}>
+                                </div>
+                                <div style={{ width: percenOfQuantity(planQuantityCounter(order_tpz, order_tj, total_quantity, start_date, start_time),total_quantity) }} className={styles.front_plan_bar}>
+                                </div>
+                            </div>
                           </div>
                         </div>
                         <div className={styles.Machine_line}>
                           <p className={styles.Machine_title}>Status:</p>
-                          {planQuantityCounter() > counter ? (
+                          {planQuantityCounter(order_tpz, order_tj, total_quantity, start_date, start_time) > counter ? (
                             <p className={styles.Machine_value}>Spóźnienie</p>
                           ) : (
                             <p className={styles.Machine_value}>W trakcie</p>
@@ -545,7 +551,7 @@ export const MachineOnline = ({ token }) => {
         </div>
       ) : (
         <div className={styles.CardsWrapper}>
-          {/* Karty maszyn */}
+          {/* Zadania Leadera */}
           <div className={styles.Machines_wrapper}>
             <div className={styles.Tasks_wrapper}>
               <p className={styles.Tasks_Title}>Lista zadań leadera.</p>
@@ -643,6 +649,10 @@ export const MachineOnline = ({ token }) => {
           </div>
         </div>
       )}
+
+<div>
+  <p>{sortState}</p>
+</div>
     </>
   );
 };

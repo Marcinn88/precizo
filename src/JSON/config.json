@@ -9,7 +9,7 @@
                 {"filtr": "6"}
             ],
     "sortOptions":[
-                {"sort": "A -> Z", "value": 0},
-                {"sort": "Z -> A", "value": 1}
+                {"sort": "Spóźnienie", "value": 0},
+                {"sort": "Czas do końca", "value": 1}
             ]
 }
