@@ -532,16 +532,14 @@ export const MachineOnline = ({ token }) => {
                         <div className={styles.Machine_line}>
                           <p className={styles.Machine_title}> Spóźnienie: </p>
                           <p className={styles.Machine_value}>
-                            {" "}
-                            {lateTime(
+                            {timeChanger(lateTime(
                               counter,
                               order_tj,
                               order_tpz,
                               total_quantity,
                               start_date,
                               start_time
-                            )}{" "}
-                            s{" "}
+                            ))}
                           </p>
                         </div>
                         <div className={styles.Machine_line}>
