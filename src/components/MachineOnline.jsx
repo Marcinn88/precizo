@@ -32,6 +32,7 @@ export const MachineOnline = ({ token }) => {
   const [activeCard, setActiveCard] = useState("Machines");
   const [time, setTime] = useState(1);
   const [taskState, setTaskState] = useState(tasks);
+  const [taskModal, setTaskModal] = useState(false)
 
   const ref = () => {
     window.location.reload(false);
@@ -627,6 +628,12 @@ export const MachineOnline = ({ token }) => {
         </div>
       ) : activeCard == "Tasks" ? (
         <div className={styles.CardsWrapper}>
+          {/* newTaskModal */}
+        {taskModal && 
+        <div className={styles.taskModal}>
+          <button onClick={()=>{setTaskModal(false)}} className={styles.modalTask_Btn}>Dodaj Zadanie</button>
+        </div>}
+
           {/* Zadania Leadera */}
           <div className={styles.Machines_wrapper}>
             <div className={styles.Tasks_wrapper}>
@@ -714,9 +721,7 @@ export const MachineOnline = ({ token }) => {
                 )}
               </div>
               <button
-                onClick={() => {
-                  alert("Tu pojawi się okno dodawania nowego zadania.");
-                }}
+                onClick={()=>{setTaskModal(true)}} 
                 className={styles.Task_Btn}
               >
                 Dodaj nowe zadanie

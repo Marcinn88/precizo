@@ -1,0 +1,46 @@
+{
+    "employee":[
+        {
+            "name":"Marcin",
+            "surname": "Niebieski",
+            "machine": "Automat tokarski CTX-400",
+            "order": "ZP1234/2024",
+            "start_time":""
+        },
+        {
+            "name":"Piotr",
+            "surname": "Zielony",
+            "machine": "Robot Spawalniczy FANUC ROB-14.028",
+            "order": "ZP5462/2024",
+            "start_time":""
+        },
+        {
+            "name":"Michał",
+            "surname": "Pomarańczowy",
+            "machine": "Automat tokarski NLX2500/1250",
+            "order": "Z4657/2024",
+            "start_time":""
+        },
+        {
+            "name":"Artur",
+            "surname": "Czerwony",
+            "machine": "Centrum Obróbkowe DMF 260-7",
+            "order": "ZP1288/2024",
+            "start_time":""
+        },
+        {
+            "name":"Jacek",
+            "surname": "Czarny",
+            "machine": "",
+            "order": "",
+            "start_time":""
+        },
+        {
+            "name":"Adam",
+            "surname": "Żółty",
+            "machine": "Automat tokarski SBL-500/1500",
+            "order": "ZP1243/2024",
+            "start_time":""
+        }
+    ]
+    }

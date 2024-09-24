@@ -432,7 +432,8 @@
     color: #1c1c1a;
 }
 
-.Task_Btn{
+.Task_Btn,
+.modalTask_Btn{
     margin-top: 20px;
     width: 120px;
     height: 50px;
@@ -451,40 +452,6 @@
     position: absolute;
     left: 10px;
 }
-
-@media screen and (max-width: 600px) {
-    .Task_El_Btn,
-    .Task_El_Btn_Finish{
-        position:static;
-        margin-bottom: 10px;
-        width: 80px;
-        height: 30px;
-    }
-    .Task_El_Finish{
-        padding: 0 5px 40px 5px;
-    }
-    .Task_El{
-        padding: 0 5px 0 5px;
-    }
-    .Task_El_ico{
-        width: 30px;
-        bottom:10px;
-        left:calc(50% - 15px);
-    }
-}
-    @media screen and (max-width: 500px) {
-        .TopMenu_El_Active,
-        .TopMenu_El{
-            width: 60px;
-        }
-        .TopMenu_El_title{
-            display: none;
-        }
-        .Machines_TopMenu_Wrapper{
-            width: 260px;
-            /* transform: scaleX(90%); */
-        }
-  } 
 
 .fullBar{
     width: 100%;
@@ -521,3 +488,71 @@
 .front_plan_bar{
     background: linear-gradient(90deg, rgb(6, 93, 143) 0%, rgb(16, 78, 194) 100%);
 }
+
+
+.taskModal{
+    width: 500px;
+    max-width: 500px;
+    height: 500px;
+    max-height: 500px;
+    position: fixed;
+    background-color: #1c1c1a;
+    left: calc(50% - 250px);
+    z-index:1;
+    border-radius: 10px;
+    border: 1px solid black;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+@media screen and (max-width: 600px) {
+    .Task_El_Btn,
+    .Task_El_Btn_Finish{
+        position:static;
+        margin-bottom: 10px;
+        width: 80px;
+        height: 30px;
+    }
+    .Task_El_Finish{
+        padding: 0 5px 40px 5px;
+    }
+    .Task_El{
+        padding: 0 5px 0 5px;
+    }
+    .Task_El_ico{
+        width: 30px;
+        bottom:10px;
+        left:calc(50% - 15px);
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .taskModal{
+        width: 400px;
+        height: 500px;
+        left: calc(50% - 200px);
+    }
+} 
+
+@media screen and (max-width: 500px) {
+    .TopMenu_El_Active,
+    .TopMenu_El{
+        width: 60px;
+    }
+    .TopMenu_El_title{
+        display: none;
+    }
+    .Machines_TopMenu_Wrapper{
+        width: 260px;
+        /* transform: scaleX(90%); */
+    }
+    .taskModal{
+        width: 260px;
+        height: 500px;
+        left: calc(50% - 130px);
+    }
+} 
