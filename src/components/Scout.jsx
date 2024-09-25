@@ -12,7 +12,7 @@ export const Scout = ({ token }) => {
       <Nav />
       <div className={styles.Scout_wrapper}>
         <Link to="/precizo/scout/machines">
-          <MenuEl key={nanoid()} obraz={cnc_machine} nazwa="Maszyny Online" />
+          <MenuEl key={nanoid()} obraz={cnc_machine} nazwa="Panel leadera" />
         </Link>
       </div>
     </>
