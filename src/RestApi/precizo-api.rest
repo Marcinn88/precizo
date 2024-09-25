@@ -1,0 +1,103 @@
+@url = https://v2.scoutmes.com/api/exec
+# przykładowy SN i activation key dowolnej maszyny
+@sn = precizo-prasa-886p
+@ak = 5ab91dbc-6386-403b-afd9-2b5db46c1ddb
+
+##### GET TIMELINE DATA #####
+# to jest generalnie to co jest w Produkcja -> Linia czasu Zamówienia
+
+###
+# zapytanie o statusy z dzisiejszego dnia od godz. 00:00 do teraz dla wszystkich maszyn
+# uwaga: danych może być dość duużo i może trochę to trwać, sugerowane jest dodanie filtrów czasowych lub na maszynę
+# (zapytania poniżej)
+POST {{url}} HTTP/1.1
+content-type: application/json
+
+{
+    "serialNumber": "{{sn}}",
+    "activationKey": "{{ak}}",
+    "method": "get-timeline-data"
+}
+
+###
+# zapytanie o statusy dla jednej maszyny, id i lista maszyn:
+# https://docs.google.com/spreadsheets/d/1bV_N1oIWbTbl8KZMcdBf4RMxlkg0Prn4zLVAGNNaRKE/edit?usp=sharing
+POST {{url}} HTTP/1.1
+content-type: application/json
+
+{
+    "serialNumber": "{{sn}}",
+    "activationKey": "{{ak}}",
+    "method": "get-timeline-data",
+    "machineId": 1541
+}
+
+###
+# zapytanie o statusy dla danego zakresu czasowego (dateFromLocal i dateToLocal)
+# tutaj dla wszystkich maszyn, ale można też dodać machineId
+POST {{url}} HTTP/1.1
+content-type: application/json
+
+{
+    "serialNumber": "{{sn}}",
+    "activationKey": "{{ak}}",
+    "method": "get-timeline-data",
+    "dateFromLocal": "2024-09-24, 00:00:00",
+    "dateToLocal": "2024-09-24, 06:00:00"
+}
+
+
+##### GET TIMELINE CYCLES #####
+# to jest generalnie to co jest w Produkcja -> Cykle
+
+###
+# zapytanie o statusy z dzisiejszego dnia od godz. 00:00 do teraz dla wszystkich maszyn
+# uwaga: danych może być dość duużo i może trochę to trwać, sugerowane jest dodanie filtrów czasowych lub na maszynę
+# (zapytania poniżej)
+POST {{url}} HTTP/1.1
+content-type: application/json
+
+{
+    "serialNumber": "{{sn}}",
+    "activationKey": "{{ak}}",
+    "method": "get-timeline-cycles"
+}
+
+###
+# zapytanie o statusy dla jednej maszyny, id i lista maszyn:
+# https://docs.google.com/spreadsheets/d/1bV_N1oIWbTbl8KZMcdBf4RMxlkg0Prn4zLVAGNNaRKE/edit?usp=sharing
+POST {{url}} HTTP/1.1
+content-type: application/json
+
+{
+    "serialNumber": "{{sn}}",
+    "activationKey": "{{ak}}",
+    "method": "get-timeline-cycles",
+    "machineId": 1541
+}
+
+###
+# zapytanie o statusy dla danego zakresu czasowego (dateFromLocal i dateToLocal) - proszę stosować format jak w poniższym przykładzie
+# tutaj dla wszystkich maszyn, ale można też dodać machineId
+POST {{url}} HTTP/1.1
+content-type: application/json
+
+{
+    "serialNumber": "{{sn}}",
+    "activationKey": "{{ak}}",
+    "method": "get-timeline-cycles",
+    "dateFromLocal": "2024-09-24, 00:00:00",
+    "dateToLocal": "2024-09-24, 06:00:00"
+}
+
+
+##### GET CURRENT STATES #####
+# zwraca aktualny status dla wszystkich maszyn (generalnie pulpit) albo /machines/ z dokumentacji proponowanej
+POST {{url}} HTTP/1.1
+content-type: application/json
+
+{
+    "serialNumber": "{{sn}}",
+    "activationKey": "{{ak}}",
+    "method": "get-current-states"
+}
