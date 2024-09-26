@@ -1,7 +1,7 @@
 {
     "Proces_narzędziowy":[{
         "numer": "123456",
-        "tools": {
+        "zawartosc": {
             "głowica_1": {
                 "gniazdo_1": {
                     "numer": 1,
