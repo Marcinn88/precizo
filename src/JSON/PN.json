@@ -1,0 +1,202 @@
+{
+    "Proces_narzędziowy":[{
+        "numer": "123456",
+        "tools": {
+            "głowica_1": {
+                "gniazdo_1": {
+                    "numer": 1,
+                    "zawartosc": {
+                        "oprawka_1": {
+                            "numer": "000123",
+                            "zawartosc": {
+                                "gniazdo_oprawki_1": {
+                                    "numer": "000125",
+                                    "nazwa": "nóż_tokarski",
+                                    "zawartosc": {
+                                        "gniazdo_narzedzia_1": {
+                                            "numer": "000125",
+                                            "nazwa": "Płytka VBMT_X40"
+                                        }
+                                    }   
+                                }
+                            }
+                        }
+                    }
+                },
+                "gniazdo_2": {
+                    "numer": 2,
+                    "zawartosc": {
+                        "oprawka_1": {
+                            "numer": "000123",
+                            "zawartosc": {
+                                "gniazdo_oprawki_1": {
+                                    "numer": "000124",
+                                    "nazwa": "Tulejka_1",
+                                    "zawartosc": {
+                                        "gniazdo_narzedzia_1": {
+                                            "numer": "000123",
+                                            "nazwa": "Wiertło fi8x100"
+                                        }
+                                    }   
+                                    },
+                                "gniazdo_oprawki_2": {
+                                    "numer": "000125",
+                                    "nazwa": "Tulejka_2",
+                                    "zawartosc": {
+                                        "gniazdo_narzedzia_1": {
+                                            "numer": "001212",
+                                            "nazwa": "Wiertło fi12x120"
+                                        }
+                                    }   
+                                }
+                            }
+                        }
+                    }
+                },
+                "gniazdo_7": {
+                    "numer": 7,
+                    "zawartosc": {
+                        "oprawka_1": {
+                            "numer": "000123",
+                            "zawartosc": {
+                                "gniazdo_oprawki_1": {
+                                    "numer": "014578",
+                                    "nazwa": "nóż_tokarski_5",
+                                    "zawartosc": {
+                                        "gniazdo_narzedzia_1": {
+                                            "numer": "001212",
+                                            "nazwa": "Płytka VBMT_X100"
+                                        }
+                                    }   
+                                }
+                            }
+                        }
+                    }
+                },
+                "gniazdo_8": {
+                    "numer": 8,
+                    "zawartosc": {
+                        "oprawka_1": {
+                            "numer": "000123",
+                            "zawartosc": {
+                                "gniazdo_oprawki_1": {
+                                    "numer": "000123",
+                                    "nazwa": "nóż_podwójny",
+                                    "zawartosc": {
+                                        "gniazdo_narzedzia_1": {
+                                            "numer": "000333",
+                                            "nazwa": "Płytka VBMT_X100"
+                                        },
+                                        "gniazdo_narzedzia_2": {
+                                            "numer": "000222",
+                                            "nazwa": "Płytka VBMT_X80"
+                                        }
+                                    }   
+                                }
+                            }
+                        }
+                    }
+            },
+            "głowica_2":{
+                "gniazdo_1": {
+                    "numer": 1,
+                    "zawartosc": {
+                        "oprawka_1": {
+                            "numer": "000123",
+                            "zawartosc": {
+                                "gniazdo_oprawki_1": {
+                                    "numer": "000123",
+                                    "nazwa": "nóż_podwójny",
+                                        "zawartosc": {
+                                            "gniazdo_narzedzia_1": {
+                                                "numer": "000333",
+                                                "nazwa": "Płytka VBMT_X100"
+                                            }
+                                        }   
+                                    }
+                                }
+                            }
+                        }
+                },
+                "gniazdo_3": {
+                    "numer": 3,
+                    "zawartosc": {
+                        "oprawka_1": {
+                            "numer": "000123",
+                            "zawartosc": {
+                                "gniazdo_oprawki_1": {
+                                    "numer": "000123",
+                                    "nazwa": "tulejka",
+                                        "zawartosc": {
+                                            "gniazdo_narzedzia_1": {
+                                                "numer": "000121",
+                                                "nazwa": "Wiertło fi50x250"
+                                            }
+                                        }   
+                                    }
+                                }
+                            }
+                        }
+                }
+                ,
+                "gniazdo_5": {
+                    "numer": 5,
+                    "zawartosc": {
+                        "oprawka_1": {
+                            "numer": "000123",
+                            "zawartosc": {
+                                "gniazdo_oprawki_1": {
+                                    "numer": "000123",
+                                    "nazwa": "tulejka",
+                                        "zawartosc": {
+                                            "gniazdo_narzedzia_1": {
+                                                "numer": "000121",
+                                                "nazwa": "Wiertło fi50x250"
+                                            }
+                                        }   
+                                    }
+                                }
+                            }
+                        }
+                }
+                ,
+                "gniazdo_9": {
+                    "numer": 9,
+                    "zawartosc": {
+                        "oprawka_1": {
+                            "numer": "000123",
+                            "zawartosc": {
+                                "gniazdo_oprawki_1": {
+                                    "numer": "000123",
+                                    "nazwa": "Nóż",
+                                        "zawartosc": {
+                                            "gniazdo_narzedzia_1": {
+                                                "numer": "000121",
+                                                "nazwa": "Płytka VBMT"
+                                            }
+                                        }   
+                                    }
+                                }
+                            }
+                        }
+                }
+            },
+            "uchwyt_1": {
+                "zawartosc":{
+                    "numer": "000121",
+                    "nazwa": "Szczęki PKB-111"
+                }
+            },
+            "uchwyt_2": {
+                "zawartosc":{
+                    "numer": "000222",
+                    "nazwa": "Szczęki PKB-222"
+                }
+            },
+            "podtrzymka": {
+                    "numer": "000125",
+                    "nazwa": "UBK-666"
+            }
+        }
+    }
+}]}
