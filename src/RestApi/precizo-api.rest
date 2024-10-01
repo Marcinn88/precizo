@@ -86,8 +86,9 @@ content-type: application/json
     "serialNumber": "{{sn}}",
     "activationKey": "{{ak}}",
     "method": "get-timeline-cycles",
-    "dateFromLocal": "2024-09-24, 00:00:00",
-    "dateToLocal": "2024-09-24, 06:00:00"
+    "dateFromLocal": "2024-09-27, 06:00:00",
+    "dateToLocal": "2024-09-27, 14:00:00",
+    "machineId": 1541
 }
 
 
