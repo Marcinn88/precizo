@@ -73,7 +73,7 @@ content-type: application/json
     "serialNumber": "{{sn}}",
     "activationKey": "{{ak}}",
     "method": "get-timeline-cycles",
-    "machineId": 1541
+    "machineId": 1540
 }
 
 ###
@@ -86,11 +86,11 @@ content-type: application/json
     "serialNumber": "{{sn}}",
     "activationKey": "{{ak}}",
     "method": "get-timeline-cycles",
-    "dateFromLocal": "2024-09-27, 06:00:00",
+    "dateFromLocal": "2024-09-27, 10:00:00",
     "dateToLocal": "2024-09-27, 14:00:00",
-    "machineId": 1541
 }
 
+    # "machineId": 1540
 
 ##### GET CURRENT STATES #####
 # zwraca aktualny status dla wszystkich maszyn (generalnie pulpit) albo /machines/ z dokumentacji proponowanej
