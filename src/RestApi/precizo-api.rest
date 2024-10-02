@@ -60,7 +60,8 @@ content-type: application/json
 {
     "serialNumber": "{{sn}}",
     "activationKey": "{{ak}}",
-    "method": "get-timeline-cycles"
+    "method": "get-timeline-cycles",
+    "machineId": 1541
 }
 
 ###
