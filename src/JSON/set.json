@@ -1,8 +1,8 @@
 {
     "set":[
         {
-            "numer":"12345",
-            "wysuniecie":"",
+            "id": "N012345",
+            "wysuniecie": "50",
             "zawartosc":{
                 "id":"N000123",
                 "nazwa":"oprawka",
@@ -14,3 +14,4 @@
         }
     ]
     }
+    

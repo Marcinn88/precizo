@@ -29,7 +29,7 @@ content-type: application/json
     "serialNumber": "{{sn}}",
     "activationKey": "{{ak}}",
     "method": "get-timeline-data",
-    "machineId": 1541
+    "machineId": 1790
 }
 
 ###
@@ -60,8 +60,7 @@ content-type: application/json
 {
     "serialNumber": "{{sn}}",
     "activationKey": "{{ak}}",
-    "method": "get-timeline-cycles",
-    "machineId": 1541
+    "method": "get-timeline-cycles"
 }
 
 ###
@@ -74,7 +73,7 @@ content-type: application/json
     "serialNumber": "{{sn}}",
     "activationKey": "{{ak}}",
     "method": "get-timeline-cycles",
-    "machineId": 1540
+    "machineId": 1790
 }
 
 ###
