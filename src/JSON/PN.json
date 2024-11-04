@@ -1,6 +1,19 @@
 {
     "Proces_narzędziowy":[{
         "numer": "123456",
+        "uwagi": "Tu jest miejsce na Twoje uwagi",
+        "cisnienie":{
+            "pres_1":{
+                "jm":"bar",
+                "value": 25,
+                "opis":"cisnienie uchytu"
+            },
+            "pres_2":{
+                "jm": "bar",
+                "value": 12,
+                "opis":"cisnienie podtrzymki"
+            }
+        },
         "zawartosc": {
             "głowica_1": {
                 "gniazdo_1": {
@@ -12,6 +25,7 @@
                                 "gniazdo_oprawki_1": {
                                     "numer": "000125",
                                     "nazwa": "nóż_tokarski",
+                                    "wysuniecie": 100,
                                     "zawartosc": {
                                         "gniazdo_narzedzia_1": {
                                             "numer": "000125",

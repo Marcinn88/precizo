@@ -1,0 +1,57 @@
+{
+    "Proces_narzędziowy":[{
+        "numer": "123456",
+        "uwagi": "Tu jest miejsce na Twoje uwagi",
+        "cisnienia":{
+            "pres_1":{
+                "jm":"bar",
+                "value": 25,
+                "opis":"cisnienie uchytu"
+            },
+            "pres_2":{
+                "jm": "bar",
+                "value": 12,
+                "opis":"cisnienie podtrzymki"
+            }
+        },
+        "proces": {
+            "głowica": {
+                "numer":1,
+                "gniazda": {
+                    "gniazdo_1": {
+                        "indeks": "N000123",
+                        "zawartosc":{
+                            "pozycja_w_oprawce_1":{
+                                "zawartosc":{
+                                    "indeks":"N000888",
+                                    "tryb_pracy":"wrzeciono główne",
+                                    "zawartosc":{
+                                        "indeks": "000245",
+                                        "pozycja_wierzcholka": 3,
+                                        "korektor": 3
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+
+            "uchwyt_1": {
+                "zawartosc":{
+                    "numer": "000121",
+                    "nazwa": "Szczęki PKB-111"
+                }
+            },
+            "uchwyt_2": {
+                "zawartosc":{
+                    "numer": "000222",
+                    "nazwa": "Szczęki PKB-222"
+                }
+            },
+            "podtrzymka": {
+                    "numer": "000125",
+                    "nazwa": "UBK-666"
+            }
+        }
+    }
+}]}
